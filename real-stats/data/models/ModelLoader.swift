@@ -10,8 +10,9 @@ import Foundation
 var complexData: [Complex] = load("stationData.json")
 var busData_dictionary: [String:BusStop] = load("bus_stops.json")
 var busData_array: [BusStop_Array] = load("bus_stops_array.json")
-var busRouteData: [String: [String: String]] = load("bus_type.json")
+var busRouteData: [String: String] = load("bus_type.json")
 var mapViewData: [MapViewType] = load("mapTypes.json")
+var trackNames: [String: TrackNamesModel] = load("trackNames.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

@@ -1,12 +1,13 @@
 {
+  "originHash" : "0012a434327b62bd110319dc0877d5a0c9f238a91e6112e8f55587379653c719",
   "pins" : [
     {
       "identity" : "bottomsheet",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/lucaszischka/BottomSheet",
       "state" : {
-        "revision" : "4c9ef84552712e0117c37d4893270fdc28fb9288",
-        "version" : "3.1.0"
+        "revision" : "720ddbd1371fef2a09cc1ab65fc503df37767f9c",
+        "version" : "3.1.1"
       }
     },
     {
@@ -24,16 +25,7 @@
       "location" : "https://github.com/ashleymills/Reachability.swift",
       "state" : {
         "branch" : "master",
-        "revision" : "c01127cb51f591045696128effe43c16840d08bf"
-      }
-    },
-    {
-      "identity" : "scrollableimage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gtokman/ScrollableImage",
-      "state" : {
-        "branch" : "main",
-        "revision" : "3097bdaa48d1cc50f9e3d91e4a412d356085941c"
+        "revision" : "7cbd73f46a7dfaeca079e18df7324c6de6d1834a"
       }
     },
     {
@@ -46,14 +38,14 @@
       }
     },
     {
-      "identity" : "wrappinghstack",
+      "identity" : "swiftui-wrapping-stack?tab=readme-ov-file",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/dkk/WrappingHStack",
+      "location" : "https://github.com/diniska/swiftui-wrapping-stack?tab=readme-ov-file",
       "state" : {
-        "revision" : "44987fbb01112e6ec72098dc6481187dd53ad4d2",
-        "version" : "2.2.9"
+        "revision" : "1e6b0fffe902cf3ffc102af5e7c0c4767cbc09e0",
+        "version" : "1.1.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

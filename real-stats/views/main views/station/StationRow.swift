@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import WrappingHStack
+import WrappingStack
 
 struct StationRow: View {
     var complex: Complex
@@ -32,7 +32,7 @@ struct StationRow: View {
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Text(complex.stations[0].short1)
+                        Text(complex.complexName.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "- ", with: "-"))
                         if complex.stations[0].ADA > 0 {
                             Image("ADA")
                                 .resizable()
@@ -41,26 +41,28 @@ struct StationRow: View {
                         }
 
                     }
-                    if complex.stations[0].short2 != "" {
-                        Text(complex.stations[0].short2)
-                            .font(.footnote)
-                    }
+//                    if complex.stations[0].short2 != "" {
+//                        Text(complex.stations[0].short2)
+//                            .font(.footnote)
+//                    }
                 }
                 .padding(.leading, 5)
                 Spacer()
-                WrappingHStack(allLines(), id: \.self, alignment: .trailing, spacing: .constant(0)) { line in
-                    if line == "PATH" {
-                        Image(line)
-                            .resizable()
-                            .frame(width: 32, height: 16)
-                            .padding(1)
-                            .shadow(radius: 2)
-                    } else {
-                        Image(line)
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .padding(1)
-                            .shadow(radius: 2)
+                WrappingHStack(id: \.self, alignment: .trailing) {
+                    ForEach(allLines(), id: \.self) { line in
+                        if line == "PATH" {
+                            Image(line)
+                                .resizable()
+                                .frame(width: 32, height: 16)
+                                .padding(1)
+                                .shadow(radius: 2)
+                        } else {
+                            Image(line)
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                                .padding(1)
+                                .shadow(radius: 2)
+                        }
                     }
                 }
                 .padding()

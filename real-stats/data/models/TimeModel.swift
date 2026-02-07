@@ -40,22 +40,22 @@ struct NewStationTime: Hashable, Codable {
     var track: String?
 }
 
-struct Time: Hashable, Codable {
-    var north: [Times]
-    var south: [Times]
-}
-
-struct Times: Hashable, Codable {
-    var line: String
-    var times: [Indv]
-}
-
-struct Indv: Hashable, Codable {
-    var currentStationTime: Int
-    var tripID: String
-    var destinationID: String
-    var countdown: Int
-}
+//struct Time: Hashable, Codable {
+//    var north: [Times]
+//    var south: [Times]
+//}
+//
+//struct Times: Hashable, Codable {
+//    var line: String
+//    var times: [Indv]
+//}
+//
+//struct Indv: Hashable, Codable {
+//    var currentStationTime: Int
+//    var tripID: String
+//    var destinationID: String
+//    var countdown: Int
+//}
 
 extension String {
   func decodeJson <T: Decodable> (_ type : T.Type ,

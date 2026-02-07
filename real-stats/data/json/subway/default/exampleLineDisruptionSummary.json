@@ -1,32 +1,4 @@
 {
-  "1": {
-    "description": "runs 24h a day.",
-    "disruptions": [
-      "good_service"
-    ],
-    "lines": []
-  },
-  "2": {
-    "description": "runs 24h a day.",
-    "disruptions": [
-      "reroutes",
-      "express",
-      "local",
-      "suspended"
-    ],
-    "lines": []
-  },
-  "3": {
-    "description": "runs 24h a day.",
-    "disruptions": [
-      "suspended",
-      "behind_schedule"
-    ],
-    "lines": [
-      "1",
-      "2"
-    ]
-  },
   "4": {
     "description": "runs 24h a day.",
     "disruptions": [

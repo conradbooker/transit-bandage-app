@@ -2,11 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSServices</key>
+	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>NSLocationWhenInUseUsageDescription</key>
-			<string>Transit Bandage will use location to look for nearby stations. Transit Bandage does not collect any user data.</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>Lisa-Booker.real-stats</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>transitbandage</string>
+			</array>
 		</dict>
 	</array>
 	<key>NSAppTransportSecurity</key>
@@ -24,5 +30,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSLocationWhenInUseUsageDescription</key>
+			<string>Transit Bandage will use location to look for nearby stations. Transit Bandage does not collect any user data.</string>
+		</dict>
+	</array>
 </dict>
 </plist>

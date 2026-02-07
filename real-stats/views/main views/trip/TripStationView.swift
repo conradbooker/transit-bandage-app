@@ -23,7 +23,7 @@ extension Shape {
 func getLineColor(line: String, time: Int) -> Color {
     let opacityAmmount = 0.5
     if time < Int(NSDate().timeIntervalSince1970) {
-        if ["A","C","E","SI","JSQ_33_HOB","33_HOB"].contains(line) {
+        if ["A","C","E","JSQ_33_HOB","33_HOB"].contains(line) {
             return Color("blue").opacity(opacityAmmount)
         } else if ["N","Q","R","W","JSQ_33"].contains(line) {
             return Color("yellow").opacity(opacityAmmount)
@@ -43,12 +43,16 @@ func getLineColor(line: String, time: Int) -> Color {
             return Color("darkerGray").opacity(opacityAmmount)
         } else if ["L"].contains(line) {
             return Color("lighterGray").opacity(opacityAmmount)
+        } else if ["SI"].contains(line) {
+            return Color("grayBlue").opacity(opacityAmmount)
+        } else if ["SS"].contains(line) {
+            return Color("grayRed").opacity(opacityAmmount)
         }
         else {
-            return .black
+            return bgColor.first.value
         }
     } else {
-        if ["A","C","E","SI","JSQ_33_HOB","33_HOB"].contains(line) {
+        if ["A","C","E","JSQ_33_HOB","33_HOB"].contains(line) {
             return Color("blue")
         } else if ["N","Q","R","W","JSQ_33"].contains(line) {
             return Color("yellow")
@@ -68,9 +72,13 @@ func getLineColor(line: String, time: Int) -> Color {
             return Color("darkerGray")
         } else if ["L"].contains(line) {
             return Color("lighterGray")
+        } else if ["SI"].contains(line) {
+            return Color("grayBlue")
+        } else if ["SS"].contains(line) {
+            return Color("grayRed")
         }
         else {
-            return .black
+            return bgColor.first.value
         }
     }
 }
@@ -78,23 +86,77 @@ func getLineColor(line: String, time: Int) -> Color {
 func getLineColor_Bus(line: String, time: Int) -> Color {
     let opacityAmmount = 0.5
     if time < Int(NSDate().timeIntervalSince1970) {
-        if busRouteData[line]?["type"] == "express" {
-            return Color("green").opacity(opacityAmmount)
-        } else if busRouteData[line]?["type"] == "sbs" {
-            return Color("turqoise").opacity(opacityAmmount)
-        } else if busRouteData[line]?["type"] == "limited" {
-            return Color("red").opacity(opacityAmmount)
-        } else {
+        do {
+            if ["A","C","E","JSQ_33_HOB","33_HOB"].contains(busRouteData[line]) {
+                return Color("blue").opacity(opacityAmmount)
+            } else if ["N","Q","R","W","JSQ_33"].contains(busRouteData[line]) {
+                return Color("yellow").opacity(opacityAmmount)
+            } else if ["B","D","F","FX","M"].contains(busRouteData[line]) {
+                return Color("orange").opacity(opacityAmmount)
+            } else if ["J","Z"].contains(busRouteData[line]) {
+                return Color("brown").opacity(opacityAmmount)
+            } else if ["1","2","3","NWK_WTC"].contains(busRouteData[line]) {
+                return Color("red").opacity(opacityAmmount)
+            } else if ["4","5","6","6X","HOB_WTC"].contains(busRouteData[line]) {
+                return Color("green").opacity(opacityAmmount)
+            } else if ["7","7X"].contains(busRouteData[line]) {
+                return Color("purple").opacity(opacityAmmount)
+            }else if ["G"].contains(busRouteData[line]) {
+                return Color("lime").opacity(opacityAmmount)
+            } else if ["H","FS","GS","0"].contains(busRouteData[line]) {
+                return Color("darkerGray").opacity(opacityAmmount)
+            } else if ["L"].contains(busRouteData[line]) {
+                return Color("lighterGray").opacity(opacityAmmount)
+            } else if ["SI"].contains(busRouteData[line]) {
+                return Color("grayBlue").opacity(opacityAmmount)
+            } else if ["SS"].contains(busRouteData[line]) {
+                return Color("grayRed").opacity(opacityAmmount)
+            } else if busRouteData[line] == "express" {
+                return Color("green").opacity(opacityAmmount)
+            } else if busRouteData[line] == "sbs" {
+                return Color("turqoise").opacity(opacityAmmount)
+            } else if busRouteData[line] == "limited" {
+                return Color("red").opacity(opacityAmmount)
+            }
+            return Color("yellow").opacity(opacityAmmount)
+        } catch {
             return Color("yellow").opacity(opacityAmmount)
         }
     } else {
-        if busRouteData[line]?["type"] == "express" {
-            return Color("green")
-        } else if busRouteData[line]?["type"] == "sbs" {
-            return Color("turqoise")
-        } else if busRouteData[line]?["type"] == "limited" {
-            return Color("red")
-        } else {
+        do {
+            if ["A","C","E","JSQ_33_HOB","33_HOB"].contains(busRouteData[line]) {
+                return Color("blue")
+            } else if ["N","Q","R","W","JSQ_33"].contains(busRouteData[line]) {
+                return Color("yellow")
+            } else if ["B","D","F","FX","M"].contains(busRouteData[line]) {
+                return Color("orange")
+            } else if ["J","Z"].contains(busRouteData[line]) {
+                return Color("brown")
+            } else if ["1","2","3","NWK_WTC"].contains(busRouteData[line]) {
+                return Color("red")
+            } else if ["4","5","6","6X","HOB_WTC"].contains(busRouteData[line]) {
+                return Color("green")
+            } else if ["7","7X"].contains(busRouteData[line]) {
+                return Color("purple")
+            }else if ["G"].contains(busRouteData[line]) {
+                return Color("lime")
+            } else if ["H","FS","S","GS"].contains(busRouteData[line]) {
+                return Color("darkerGray")
+            } else if ["L"].contains(busRouteData[line]) {
+                return Color("lighterGray")
+            } else if ["SI"].contains(busRouteData[line]) {
+                return Color("grayBlue")
+            } else if ["SS"].contains(busRouteData[line]) {
+                return Color("grayRed")
+            } else if busRouteData[line] == "express" {
+                return Color("green")
+            } else if busRouteData[line] == "sbs" {
+                return Color("turqoise")
+            } else if busRouteData[line] == "limited" {
+                return Color("red")
+            }
+            return Color("yellow")
+        } catch {
             return Color("yellow")
         }
     }
@@ -116,29 +178,54 @@ struct LineShape: View {
     
     var imageSize: CGFloat = 22
     
+    var stationTime: Int {
+        return trip.stations[station]?.times[0] ?? 0
+    }
+    
     var body: some View {
         VStack {
             Group {
                 if (stationsDict[station]?.isTransfer ?? false) {
                     ZStack {
-                        Circle()
-                            .foregroundColor(Color("cDarkGray"))
-                            .frame(width: imageSize-1, height: imageSize-1)
-                        Circle()
-                            .strokeBorder(getLineColor(line: line, time: trip.stations[station]?.times[0] ?? 0),lineWidth: 3)
-                            .background(Circle().foregroundColor(Color("cDarkGray")).frame(width: imageSize-0.3305, height: imageSize-0.33333333)
-                                .padding(.top,-0.005))
-                        .frame(width: imageSize, height: imageSize)
+                        if stationTime < Int(NSDate().timeIntervalSince1970) {
+                            Group {
+                                Circle()
+                                    .foregroundColor(bgColor.first.value)
+                                    .frame(width: imageSize, height: imageSize)
+//                                Circle()
+//                                    .strokeBorder(bgColor.first.value,lineWidth: 3)
+//                                    .background(Circle().foregroundColor(.clear).frame(width: imageSize-1, height: imageSize-1))
+                                Circle()
+                                    .strokeBorder(Color("cBlack"),lineWidth: 3)
+                                    .background(Circle().foregroundColor(Color("cWhite")).frame(width: imageSize-6, height: imageSize-6))
+                                    .frame(width: imageSize, height: imageSize)
+                                    .opacity(0.5)
+                            }
+                            .frame(width: imageSize, height: imageSize)
+                        } else {
+                            Group {
+//                                Circle()
+//                                    .foregroundColor(Color("cWhite"))
+//                                    .frame(width: imageSize-1, height: imageSize-1)
+                                Circle()
+                                    .strokeBorder(Color("cBlack"),lineWidth: 3)
+                                    .background(Circle().foregroundColor(Color("cWhite")).frame(width: imageSize-6, height: imageSize-6))
+                            }
+                            .frame(width: imageSize, height: imageSize)
+                        }
+//                            .background(Circle().foregroundColor(getLineColor(line: "line1", time: trip.stations[station]?.times[0] ?? 0)).frame(width: imageSize-0.3305, height: imageSize-0.33333333)
+//                                .padding(.top,-0.005))
                     }
                 } else {
                     ZStack {
                         Circle()
-                            .foregroundColor(Color("cDarkGray"))
+                            .foregroundColor(bgColor.first.value)
                             .frame(width: imageSize-0.3, height: imageSize-0.3)
                         Circle()
-                            .strokeBorder(Color("cDarkGray"),lineWidth: 3)
+                            .strokeBorder(bgColor.first.value,lineWidth: 3)
                             .background(
                                 Circle()
+//                                    .foregroundColor(.black)
                                     .foregroundColor(getLineColor(line: line, time: trip.stations[station]?.times[0] ?? 0))
                                     .frame(width: imageSize-1, height: imageSize-1)
                             )
@@ -249,8 +336,8 @@ struct TripStationView: View {
                             Text(stationsDict[station]?.short2 ?? "")
                                 .font(.subheadline)
                         }
-                        Text("Track " + (trip.stations[station]?.track ?? "hi") ?? "hi")
-                            .font(.footnote)
+//                        Text("Track " + (trip.stations[station]?.track ?? "hi") ?? "hi")
+//                            .font(.footnote)
                         HStack(spacing: 1.5) {
                             ForEach(stationsDict[station]?.weekdayLines ?? [""], id: \.self) { bullet in
                                 if bullet != trip.line {
@@ -278,6 +365,15 @@ struct TripStationView: View {
                             Text("Sudden reroute")
                         }
                     }
+                    if trip.stations[station]?.skipped == true {
+                        HStack {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .frame(width: 15,height: 15)
+                                .foregroundStyle(.white, .red)
+                                .shadow(radius: 2)
+                            Text("Will not stop")
+                        }
+                    }
                     Spacer()
                 }
                 .padding(.trailing)
@@ -286,16 +382,18 @@ struct TripStationView: View {
 
         }
         .sheet(item: $selectedItem) { item in
-            if fromFavorites {
-                // chosen station = favoriteStationNumber thing
-                StationView(complex: item.complex, chosenStation: chosenStation, isFavorited: true)
-                    .environment(\.managedObjectContext, persistentContainer.viewContext)
-                    .syncLayoutOnDissappear()
-            } else {
-                StationView(complex: item.complex, chosenStation: 0, isFavorited: false)
-                    .environment(\.managedObjectContext, persistentContainer.viewContext)
-                    .syncLayoutOnDissappear()
+            ZStack {
+                if fromFavorites {
+                    // chosen station = favoriteStationNumber thing
+                    StationView(complex: item.complex, chosenStation: chosenStation, isFavorited: true)
+                        .environment(\.managedObjectContext, persistentContainer.viewContext)
+                } else {
+                    StationView(complex: item.complex, chosenStation: 0, isFavorited: false)
+                        .environment(\.managedObjectContext, persistentContainer.viewContext)
+                }
+                CloseSheet()
             }
+            .syncLayoutOnDissappear()
         }
         
     }

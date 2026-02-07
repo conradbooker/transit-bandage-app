@@ -18,38 +18,21 @@ struct WhatsNew: View {
                 .fontWeight(.bold)
                 .padding()
             VStack(alignment: .leading,spacing: 10) {
-                HStack(spacing: 10) {
+//                HStack(spacing: 0) {
 //                    Spacer()
-                    Image("N")
-                        .resizable()
-                        .frame(width: 50,height: 50)
-                    Image("E")
-                        .resizable()
-                        .frame(width: 50,height: 50)
-                    Image("W")
-                        .resizable()
-                        .frame(width: 50,height: 50)
-                    Spacer()
-                    Image("M")
-                        .resizable()
-                        .frame(width: 50,height: 50)
-                    Image("A")
-                        .resizable()
-                        .frame(width: 50,height: 50)
-                    Image("JSQ_33")
-                        .resizable()
-                        .frame(width: 50,height: 50)
+//                    LineBox(line: "A", first: ["good_service"])
+//                    LineBox(line: "1", first: ["no_service"])
+//                    LineBox(line: "7", first: ["d"])
+//                    LineBox(line: "4", first: ["q","2"])
+//                    LineBox(line: "N", first: ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"])
+//                    LineBox(line: "B", first: ["good_service"])
 //                    Spacer()
+//                }
+//                .padding()
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Not much, just bug fixes :)")
                 }
-                .padding()
-                .frame(width: UIScreen.screenWidth)
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Significantly Improved Speed of UI")
-                    Text("Added Diagramic Map - Light Mode and Dark Mode")
-                    Text("Fixed Light Mode and Dark Mode Settings")
-                    Text("Added option to sort departure view by track (on by default)")
-                    Text("Other bug fixes (as per usual)")
-                }.padding(.leading)
+                .padding(.leading)
             }
             Spacer()
             Button {

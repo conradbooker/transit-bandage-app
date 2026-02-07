@@ -66,8 +66,11 @@ struct BusRow: View {
         }
         .buttonStyle(CButton())
         .sheet(item: $busTripItem) { item in
-            BusTripView(tripID: item.tripID)
-                .syncLayoutOnDissappear()
+            ZStack {
+                BusTripView(tripID: item.tripID)
+                CloseSheet()
+            }
+            .syncLayoutOnDissappear()
         }
     }
 }

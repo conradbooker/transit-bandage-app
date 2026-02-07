@@ -19,20 +19,20 @@ enum ServiceDisruption {
 
 func formattedSkippedStations(stations: [String]) -> String {
     var temp = ""
-    temp += stationsDict[stations[0]]?.short1 ?? ""
+    temp += stationsDict[stations[0]]?.short ?? ""
     let newStations = stations[1...]
     for station in newStations {
-        temp += ", \(stationsDict[station]?.short1 ?? "")"
+        temp += ", \(stationsDict[station]?.short ?? "")"
     }
     return temp
 }
 
 func getAllStations(stations: [String]) -> String {
     var temp = ""
-    temp += "\(stationsDict[stations[0]]?.short1 ?? "")"
+    temp += "\(stationsDict[stations[0]]?.short ?? "")"
     if stations.count > 1 {
         for station in stations[1...] {
-            temp += ", \(stationsDict[station]?.short1 ?? "")"
+            temp += ", \(stationsDict[station]?.short ?? "")"
         }
     }
     return temp
@@ -90,16 +90,16 @@ struct DisruptionBox: View {
         
         if type == .rerouted {
             self.from = reroute.reroutedFrom
-            self.from = stationsDict[from]?.short1 ?? ""
+            self.from = stationsDict[from]?.short ?? ""
             
             self.to = reroute.reroutedTo
-            self.to = stationsDict[to]?.short1 ?? ""
+            self.to = stationsDict[to]?.short ?? ""
         } else if type == .suspended {
             self.from = suspended[0]
-            self.from = stationsDict[from]?.short1 ?? ""
+            self.from = stationsDict[from]?.short ?? ""
             
             self.to = suspended[1]
-            self.to = stationsDict[to]?.short1 ?? ""
+            self.to = stationsDict[to]?.short ?? ""
         } else if type == .skipped {
             stationsArray = trip.serviceDisruptions.skippedStations 
         } else if type == .local {

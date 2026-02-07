@@ -1,590 +1,3213 @@
 {
   "1": {
+    "new": {
+      "101": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 47.3333333333333,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "142": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 20.8888888888889,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "101142": {
+          "occurances": 7,
+          "startTime": 888,
+          "stations": [
+            "101",
+            "142"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "2": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+    "new": {
+      "201": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -137.909090909091,
+          "delays": {
+
+          },
+          "trainsInService": 11
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "247": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -180.75,
+          "delays": {
+
+          },
+          "trainsInService": 12
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "221213": {
+              "from": "213",
+              "occurances": 16,
+              "stations": [
+                [
+                  "214",
+                  "215",
+                  "216",
+                  "217",
+                  "218",
+                  "219",
+                  "220"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "221",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      }
     },
-    "southbound": {
-      "delays": {},
+    "northbound": {
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
       "skippedStations": {
-        "209212": {
-          "occurances": 16,
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "201247": {
+          "occurances": 5,
+          "startTime": 618,
           "stations": [
-            "209",
-            "210",
-            "211",
-            "212"
+            "201",
+            "247"
           ]
         }
       },
-      "suspended": {}
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+        "214220": {
+          "occurances": 16,
+          "stations": [
+            "214",
+            "215",
+            "216",
+            "217",
+            "218",
+            "219",
+            "220"
+          ]
+        }
+      },
+      "suspended": {
+
+      }
     }
   },
   "3": {
+    "new": {
+      "257": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -94.4444444444444,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "301": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -39.8888888888889,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "257301": {
+          "occurances": 5,
+          "startTime": 888,
+          "stations": [
+            "257",
+            "301"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "4": {
+    "new": {
+      "250": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -68.9,
+          "delays": {
+
+          },
+          "trainsInService": 10
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "401": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 14.125,
+          "delays": {
+
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
       "skippedStations": {
-        "416416": {
-          "occurances": 1,
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "250401": {
+          "occurances": 5,
+          "startTime": 678,
           "stations": [
-            "416"
+            "250",
+            "401"
+          ]
+        },
+        "250405": {
+          "occurances": 1,
+          "startTime": 1068,
+          "stations": [
+            "250",
+            "405"
           ]
         }
       },
-      "suspended": {}
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "5": {
+    "new": {
+      "247": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -382.363636363636,
+          "delays": {
+
+          },
+          "trainsInService": 11
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "213505": {
+              "from": "505",
+              "occurances": 15,
+              "stations": [
+                [
+                  "204",
+                  "205",
+                  "206",
+                  "207",
+                  "208",
+                  "209",
+                  "210",
+                  "211",
+                  "212"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "213",
+              "type": "skipping"
+            },
+            "221213": {
+              "from": "213",
+              "occurances": 15,
+              "stations": [
+                [
+                  "214",
+                  "215",
+                  "216",
+                  "217",
+                  "218",
+                  "219",
+                  "220"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "221",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "250": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+          "239250": {
+            "occurances": 2,
+            "reroutedFrom": "239",
+            "reroutedTo": "250",
+            "sudden": false,
+            "via": "3"
+          }
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "213505": {
+              "from": "505",
+              "occurances": 1,
+              "stations": [
+                [
+                  "204",
+                  "205",
+                  "206",
+                  "207",
+                  "208",
+                  "209",
+                  "210",
+                  "211",
+                  "212"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "213",
+              "type": "skipping"
+            },
+            "221213": {
+              "from": "213",
+              "occurances": 2,
+              "stations": [
+                [
+                  "214",
+                  "215",
+                  "216",
+                  "217",
+                  "218",
+                  "219",
+                  "220"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "221",
+              "type": "express"
+            },
+            "250239": {
+              "from": "239",
+              "occurances": 2,
+              "stations": [
+                [
+                  "248",
+                  "249"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "250",
+              "type": "express"
+            }
+          },
+          "suspended": {
+            "250257": {
+              "occurances": 2,
+              "stations": [
+                "250",
+                "257"
+              ]
+            }
+          }
+        }
+      },
+      "420": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "221213": {
+              "from": "213",
+              "occurances": 1,
+              "stations": [
+                [
+                  "214",
+                  "215",
+                  "216",
+                  "217",
+                  "218",
+                  "219",
+                  "220"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "221",
+              "type": "express"
+            }
+          },
+          "suspended": {
+            "420247": {
+              "occurances": 1,
+              "stations": [
+                "420",
+                "247"
+              ]
+            }
+          }
+        }
+      },
+      "501": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -116.454545454545,
+          "delays": {
+
+          },
+          "trainsInService": 11
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "505213": {
+              "from": "213",
+              "occurances": 15,
+              "stations": [
+                [
+                  "212",
+                  "211",
+                  "210",
+                  "209",
+                  "208",
+                  "207",
+                  "206",
+                  "205",
+                  "204"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "505",
+              "type": "skipping"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "213250": {
+          "occurances": 1,
+          "startTime": 918,
+          "stations": [
+            "213",
+            "250"
+          ]
+        },
+        "213420": {
+          "occurances": 1,
+          "startTime": 1338,
+          "stations": [
+            "213",
+            "420"
+          ]
+        },
+        "247501": {
+          "occurances": 5,
+          "startTime": 798,
+          "stations": [
+            "247",
+            "501"
+          ]
+        },
+        "250501": {
+          "occurances": 1,
+          "startTime": 1278,
+          "stations": [
+            "250",
+            "501"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+        "239250": {
+          "occurances": 2,
+          "reroutedFrom": "239",
+          "reroutedTo": "250",
+          "sudden": false,
+          "via": "3"
+        }
+      },
+      "skippedStations": {
+        "214220": {
+          "occurances": 18,
+          "stations": [
+            "214",
+            "215",
+            "216",
+            "217",
+            "218",
+            "219",
+            "220"
+          ]
+        },
+        "248249": {
+          "occurances": 2,
+          "stations": [
+            "248",
+            "249"
+          ]
+        }
+      },
+      "suspended": {
+        "250257": {
+          "occurances": 2,
+          "stations": [
+            "250",
+            "257"
+          ]
+        },
+        "420247": {
+          "occurances": 1,
+          "stations": [
+            "420",
+            "247"
+          ]
+        }
+      }
     }
   },
   "6": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+    "new": {
+      "608": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 129.375,
+          "delays": {
+
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+            "608601": {
+              "occurances": 12,
+              "stations": [
+                "608",
+                "601"
+              ]
+            }
+          }
+        }
+      },
+      "640": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 57.5384615384615,
+          "delays": {
+
+          },
+          "trainsInService": 13
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
     },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    }
-  },
-  "7": {
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
       "skippedStations": {
-        "705709": {
-          "occurances": 9,
+
+      },
+      "suspended": {
+        "608601": {
+          "occurances": 12,
           "stations": [
-            "705",
-            "709"
+            "608",
+            "601"
+          ]
+        }
+      }
+    },
+    "overview": {
+      "segments": {
+        "601640": {
+          "occurances": 3,
+          "startTime": 708,
+          "stations": [
+            "601",
+            "640"
           ]
         },
-        "709709": {
-          "occurances": 2,
+        "608640": {
+          "occurances": 5,
+          "startTime": 648,
           "stations": [
-            "709"
+            "608",
+            "640"
           ]
         }
       },
-      "suspended": {}
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "6X": {
+    "new": {
+      "601": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 311.875,
+          "delays": {
+
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "608613": {
+              "from": "613",
+              "occurances": 3,
+              "stations": [
+                [
+                  "612",
+                  "611",
+                  "610",
+                  "609"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "608",
+              "type": "express"
+            },
+            "608619": {
+              "from": "619",
+              "occurances": 8,
+              "stations": [
+                [
+                  "618",
+                  "617",
+                  "616",
+                  "615",
+                  "614"
+                ],
+                [
+                  "612",
+                  "611",
+                  "610",
+                  "609"
+                ]
+              ],
+              "stoppingAt": [
+                "613"
+              ],
+              "to": "608",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "601640": {
+          "occurances": 2,
+          "startTime": 888,
+          "stations": [
+            "601",
+            "640"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    }
+  },
+  "7": {
+    "new": {
+      "701": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 38.4444444444444,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "702": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "726": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -83,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
+    "northbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "701702": {
+          "occurances": 2,
+          "startTime": 13537,
+          "stations": [
+            "701",
+            "702"
+          ]
+        },
+        "701726": {
+          "occurances": 11,
+          "startTime": 708,
+          "stations": [
+            "701",
+            "726"
+          ]
+        },
+        "725726": {
+          "occurances": 1,
+          "startTime": 13932,
+          "stations": [
+            "725",
+            "726"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "7X": {
+    "new": {
+      "701": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+            "710718": {
+              "from": "718",
+              "occurances": 4,
+              "skipping": [
+                "709",
+                "708"
+              ],
+              "stations": [
+                [
+                  "716",
+                  "715",
+                  "714",
+                  "713"
+                ],
+                [
+                  "711"
+                ]
+              ],
+              "to": "710"
+            }
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "726": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+        "711716": {
+          "occurances": 4,
+          "stations": [
+            "711",
+            "713",
+            "714",
+            "715",
+            "716"
+          ]
+        }
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "701726": {
+          "occurances": 3,
+          "startTime": 1008,
+          "stations": [
+            "701",
+            "726"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "A": {
+    "new": {
+      "A02": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -29.75,
+          "delays": {
+
+          },
+          "trainsInService": 12
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "A65": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -116.25,
+          "delays": {
+
+          },
+          "trainsInService": 4
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "H11": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -79.5,
+          "delays": {
+
+          },
+          "trainsInService": 6
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "A02A65": {
+          "occurances": 6,
+          "startTime": 1218,
+          "stations": [
+            "A02",
+            "A65"
+          ]
+        },
+        "A02H11": {
+          "occurances": 7,
+          "startTime": 678,
+          "stations": [
+            "A02",
+            "H11"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "B": {
+    "new": {
+      "D03": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -36.25,
+          "delays": {
+
+          },
+          "trainsInService": 4
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "D13": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 3,
+          "delays": {
+
+          },
+          "trainsInService": 3
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "D40": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 119.8,
+          "delays": {
+
+          },
+          "trainsInService": 10
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "D03D40": {
+          "occurances": 7,
+          "startTime": 1518,
+          "stations": [
+            "D03",
+            "D40"
+          ]
+        },
+        "D13D40": {
+          "occurances": 4,
+          "startTime": 828,
+          "stations": [
+            "D13",
+            "D40"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "C": {
+    "new": {
+      "A09": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 68.8571428571429,
+          "delays": {
+
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "A55": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 10.4285714285714,
+          "delays": {
+
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "A09A55": {
+          "occurances": 10,
+          "startTime": 798,
+          "stations": [
+            "A09",
+            "A55"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "D": {
+    "new": {
+      "D01": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -72.7,
+          "delays": {
+            "078500_D..N07R*D": {
+              "delayAmmount": 240,
+              "destination": "D01",
+              "location": "D03",
+              "track": "2"
+            }
+          },
+          "trainsInService": 10
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "D05D07": {
+              "from": "D07",
+              "occurances": 5,
+              "stations": [
+                [
+                  "D06"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "D05",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "D03": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+            "D03D43": {
+              "occurances": 1,
+              "stations": [
+                "D03",
+                "D43"
+              ]
+            }
+          }
+        }
+      },
+      "D43": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 110.9,
+          "delays": {
+
+          },
+          "trainsInService": 10
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+            "D03D43": {
+              "occurances": 1,
+              "stations": [
+                "D03",
+                "D43"
+              ]
+            }
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+        "078500_D..N07R*D": {
+          "delayAmmount": 240,
+          "destination": "D01",
+          "location": "D03",
+          "track": "2"
+        }
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "D01D03": {
+          "occurances": 1,
+          "startTime": 3558,
+          "stations": [
+            "D01",
+            "D03"
+          ]
+        },
+        "D01D43": {
+          "occurances": 12,
+          "startTime": 768,
+          "stations": [
+            "D01",
+            "D43"
+          ]
+        },
+        "D08D43": {
+          "occurances": 1,
+          "startTime": 603,
+          "stations": [
+            "D08",
+            "D43"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+        "D03D43": {
+          "occurances": 2,
+          "stations": [
+            "D03",
+            "D43"
+          ]
+        }
+      }
     }
   },
   "E": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+    "new": {
+      "E01": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -182.857142857143,
+          "delays": {
+
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "G08G07": {
+              "from": "G07",
+              "occurances": 19,
+              "stations": [
+                [
+                  "F05"
+                ],
+                [
+                  "F07"
+                ]
+              ],
+              "stoppingAt": [
+                "F06"
+              ],
+              "to": "G08",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "G05": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 172.857142857143,
+          "delays": {
+            "080150_F..N69R*F": {
+              "delayAmmount": 210,
+              "destination": "F01",
+              "location": "G14",
+              "track": "4"
+            },
+            "084050_E..N66R*E": {
+              "delayAmmount": 160,
+              "destination": "G05",
+              "location": "G14",
+              "track": "4"
+            }
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "G07G08": {
+              "from": "G08",
+              "occurances": 17,
+              "stations": [
+                [
+                  "F07"
+                ],
+                [
+                  "F05"
+                ]
+              ],
+              "stoppingAt": [
+                "F06"
+              ],
+              "to": "G07",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      }
     },
-    "southbound": {
-      "delays": {},
+    "northbound": {
+      "delays": {
+        "080150_F..N69R*F": {
+          "delayAmmount": 210,
+          "destination": "F01",
+          "location": "G14",
+          "track": "4"
+        },
+        "084050_E..N66R*E": {
+          "delayAmmount": 160,
+          "destination": "G05",
+          "location": "G14",
+          "track": "4"
+        }
+      },
       "extended": [],
       "localStations": {
-        "F05F07": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "E01G05": {
           "occurances": 19,
+          "startTime": 618,
           "stations": [
-            "F05",
-            "F07"
+            "E01",
+            "G05"
           ]
         }
       },
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "F": {
+    "new": {
+      "D43": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -42.4166666666667,
+          "delays": {
+            "079250_F..S*F": {
+              "delayAmmount": 180,
+              "destination": "D43",
+              "location": "F39",
+              "track": "1"
+            }
+          },
+          "trainsInService": 12
+        },
+        "reroutes": {
+          "D14A32": {
+            "occurances": 1,
+            "reroutedFrom": "D14",
+            "reroutedTo": "A32",
+            "sudden": false,
+            "via": "E"
+          },
+          "D43D14": {
+            "occurances": 1,
+            "reroutedFrom": "D43",
+            "reroutedTo": "D14",
+            "sudden": false,
+            "via": "D"
+          }
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "F35F30": {
+              "from": "F30",
+              "occurances": 18,
+              "stations": [
+                [
+                  "F31",
+                  "F32",
+                  "F33",
+                  "F34"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "F35",
+              "type": "skipping"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "F01": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 246.5,
+          "delays": {
+            "080150_F..N69R*F": {
+              "delayAmmount": 210,
+              "destination": "F01",
+              "location": "G14",
+              "track": "4"
+            },
+            "084050_E..N66R*E": {
+              "delayAmmount": 160,
+              "destination": "G05",
+              "location": "G14",
+              "track": "4"
+            }
+          },
+          "trainsInService": 12
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "F35": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -137,
+          "delays": {
+
+          },
+          "trainsInService": 1
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "F35F30": {
+              "from": "F30",
+              "occurances": 4,
+              "stations": [
+                [
+                  "F31",
+                  "F32",
+                  "F33",
+                  "F34"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "F35",
+              "type": "skipping"
+            }
+          },
+          "suspended": {
+            "F35D43": {
+              "occurances": 4,
+              "stations": [
+                "F35",
+                "D43"
+              ]
+            }
+          }
+        }
+      }
+    },
     "northbound": {
       "delays": {
-        "087533_F..N": {
-          "delayAmmount": 180,
+        "080150_F..N69R*F": {
+          "delayAmmount": 210,
           "destination": "F01",
-          "location": "F27"
+          "location": "G14",
+          "track": "4"
         },
-        "088515_F..N": {
-          "delayAmmount": 170,
-          "destination": "F01",
-          "location": "F34"
+        "084050_E..N66R*E": {
+          "delayAmmount": 160,
+          "destination": "G05",
+          "location": "G14",
+          "track": "4"
         }
       },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
       "skippedStations": {
-        "F04F07": {
-          "occurances": 20,
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "D43F01": {
+          "occurances": 13,
+          "startTime": 678,
           "stations": [
-            "F04",
-            "F05",
-            "F07"
+            "D43",
+            "F01"
+          ]
+        },
+        "F01F35": {
+          "occurances": 4,
+          "startTime": 1188,
+          "stations": [
+            "F01",
+            "F35"
           ]
         }
       },
-      "suspended": {}
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+        "079250_F..S*F": {
+          "delayAmmount": 180,
+          "destination": "D43",
+          "location": "F39",
+          "track": "1"
+        }
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+        "D14A32": {
+          "occurances": 1,
+          "reroutedFrom": "D14",
+          "reroutedTo": "A32",
+          "sudden": false,
+          "via": "E"
+        },
+        "D43D14": {
+          "occurances": 1,
+          "reroutedFrom": "D43",
+          "reroutedTo": "D14",
+          "sudden": false,
+          "via": "D"
+        }
+      },
+      "skippedStations": {
+        "B04F34": {
+          "occurances": 1,
+          "stations": [
+            "B04",
+            "B06",
+            "B08",
+            "B10",
+            "D15",
+            "D16",
+            "D17",
+            "D18",
+            "D19",
+            "D20",
+            "F31",
+            "F32",
+            "F33",
+            "F34"
+          ]
+        },
+        "B12R36": {
+          "occurances": 1,
+          "stations": [
+            "B12",
+            "B13",
+            "B14",
+            "B15",
+            "B16",
+            "B17",
+            "B18",
+            "B19",
+            "B20",
+            "B21",
+            "B22",
+            "B23",
+            "D15",
+            "D16",
+            "D17",
+            "D20",
+            "D21",
+            "D22",
+            "R31",
+            "R36"
+          ]
+        },
+        "F31F34": {
+          "occurances": 21,
+          "stations": [
+            "F31",
+            "F32",
+            "F33",
+            "F34"
+          ]
+        }
+      },
+      "suspended": {
+        "F35D43": {
+          "occurances": 4,
+          "stations": [
+            "F35",
+            "D43"
+          ]
+        }
+      }
     }
   },
   "FS": {
+    "new": {
+      "D26": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "S03": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+            "S03S01": {
+              "occurances": 6,
+              "stations": [
+                "S03",
+                "S01"
+              ]
+            }
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+        "S03S01": {
+          "occurances": 6,
+          "stations": [
+            "S03",
+            "S01"
+          ]
+        }
+      }
+    },
+    "overview": {
+      "segments": {
+        "D26S03": {
+          "occurances": 10,
+          "startTime": 708,
+          "stations": [
+            "D26",
+            "S03"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "G": {
+    "new": {
+      "F27": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 314,
+          "delays": {
+
+          },
+          "trainsInService": 2
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "G33": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -16,
+          "delays": {
+
+          },
+          "trainsInService": 3
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+            "G33G22": {
+              "occurances": 9,
+              "stations": [
+                "G33",
+                "G22"
+              ]
+            }
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+        "G33G22": {
+          "occurances": 9,
+          "stations": [
+            "G33",
+            "G22"
+          ]
+        }
+      }
+    },
+    "overview": {
+      "segments": {
+        "F27G33": {
+          "occurances": 10,
+          "startTime": 1038,
+          "stations": [
+            "F27",
+            "G33"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "GS": {
+    "new": {
+      "901": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "902": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "901902": {
+          "occurances": 10,
+          "startTime": 678,
+          "stations": [
+            "901",
+            "902"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "H": {
+    "new": {
+      "H04": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 1
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "H15": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 55,
+          "delays": {
+
+          },
+          "trainsInService": 1
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "H04H15": {
+          "occurances": 7,
+          "startTime": 648,
+          "stations": [
+            "H04",
+            "H15"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "J": {
+    "new": {
+      "G05": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 111.625,
+          "delays": {
+
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "M23": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 36.7142857142857,
+          "delays": {
+            "086000_J..S12R*J": {
+              "delayAmmount": 130,
+              "destination": "M23",
+              "location": "J22",
+              "track": "2"
+            }
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "J16J14": {
+              "from": "J14",
+              "occurances": 14,
+              "stations": [
+                [
+                  "J15"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "J16",
+              "type": "skipping"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "G05M23": {
+          "occurances": 12,
+          "startTime": 768,
+          "stations": [
+            "G05",
+            "M23"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+        "086000_J..S12R*J": {
+          "delayAmmount": 130,
+          "destination": "M23",
+          "location": "J22",
+          "track": "2"
+        }
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
       "skippedStations": {
         "J15J15": {
-          "occurances": 11,
+          "occurances": 14,
           "stations": [
             "J15"
           ]
         }
       },
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "suspended": {
+
+      }
     }
   },
   "L": {
+    "new": {
+      "L01": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -50.7142857142857,
+          "delays": {
+
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "L29": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -9.28571428571429,
+          "delays": {
+
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "L01L29": {
+          "occurances": 8,
+          "startTime": 798,
+          "stations": [
+            "L01",
+            "L29"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   },
   "M": {
+    "new": {
+      "G08": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -65.1428571428571,
+          "delays": {
+
+          },
+          "trainsInService": 7
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "M01": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -321.125,
+          "delays": {
+            "081950_M..S20R*M": {
+              "delayAmmount": 120,
+              "destination": "M01",
+              "location": "M10",
+              "track": "1"
+            }
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+          "F01G08": {
+            "occurances": 1,
+            "reroutedFrom": "F01",
+            "reroutedTo": "G08",
+            "sudden": false,
+            "via": "F"
+          }
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "G08F01": {
+              "from": "F01",
+              "occurances": 1,
+              "stations": [
+                [
+                  "F02",
+                  "F03",
+                  "F04",
+                  "F05",
+                  "F06",
+                  "F07"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "G08",
+              "type": "express"
+            }
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
     "northbound": {
-      "delays": {},
+      "delays": {
+
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
       "skippedStations": {
-        "M08M08": {
-          "occurances": 1,
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "G08M01": {
+          "occurances": 12,
+          "startTime": 618,
           "stations": [
-            "M08"
+            "G08",
+            "M01"
           ]
         }
       },
-      "suspended": {}
+      "service": true,
+      "trainsInService": 0
     },
     "southbound": {
-      "delays": {},
+      "delays": {
+        "081950_M..S20R*M": {
+          "delayAmmount": 120,
+          "destination": "M01",
+          "location": "M10",
+          "track": "1"
+        }
+      },
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
+      "localStations": {
+
+      },
+      "reroutes": {
+        "F01G08": {
+          "occurances": 1,
+          "reroutedFrom": "F01",
+          "reroutedTo": "G08",
+          "sudden": false,
+          "via": "F"
+        }
+      },
+      "skippedStations": {
+        "F02F07": {
+          "occurances": 1,
+          "stations": [
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06",
+            "F07"
+          ]
+        }
+      },
+      "suspended": {
+
+      }
     }
   },
   "N": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {
-        "N02R41": {
-          "occurances": 10,
-          "stations": [
-            "N02",
-            "N03",
-            "N04",
-            "N05",
-            "N06",
-            "N07",
-            "N08",
-            "N09",
-            "N10",
-            "R41"
-          ]
+    "new": {
+      "D43": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -131.888888888889,
+          "delays": {
+
+          },
+          "trainsInService": 9
         },
-        "R04R08": {
-          "occurances": 4,
-          "stations": [
-            "R04",
-            "R05",
-            "R06",
-            "R08"
-          ]
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
         }
       },
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    }
-  },
-  "Q": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {
-        "N10Q01": {
-          "occurances": 1,
-          "reroutedFrom": "N10",
-          "reroutedTo": "Q01",
-          "sudden": false,
-          "via": "N"
+      "Q05": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 0,
+          "delays": {
+
+          },
+          "trainsInService": 0
+        },
+        "reroutes": {
+          "R14Q05": {
+            "occurances": 2,
+            "reroutedFrom": "R14",
+            "reroutedTo": "Q05",
+            "sudden": false,
+            "via": "Q"
+          }
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+            "R14R16": {
+              "from": "R16",
+              "occurances": 2,
+              "stations": [
+                [
+                  "R15"
+                ]
+              ],
+              "stoppingAt": [],
+              "to": "R14",
+              "type": "skipping"
+            }
+          },
+          "suspended": {
+
+          }
         }
       },
-      "skippedStations": {
-        "D24R30": {
-          "occurances": 2,
-          "stations": [
-            "D24",
-            "D25",
-            "D26",
-            "D27",
-            "D28",
-            "D29",
-            "D30",
-            "D31",
-            "D32",
-            "D33",
-            "D34",
-            "D35",
-            "D37",
-            "D38",
-            "D39",
-            "D40",
-            "D41",
-            "D42",
-            "R30"
-          ]
+      "R01": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -154,
+          "delays": {
+
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
         }
+      }
+    },
+    "northbound": {
+      "delays": {
+
       },
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
       "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    }
-  },
-  "R": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {},
-      "skippedStations": {},
-      "suspended": {}
-    }
-  },
-  "W": {
-    "northbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
+      "localStations": {
+
+      },
       "reroutes": {
         "R14Q05": {
           "occurances": 2,
@@ -594,24 +3217,483 @@
           "via": "Q"
         }
       },
-      "skippedStations": {},
-      "suspended": {}
-    },
-    "southbound": {
-      "delays": {},
-      "extended": [],
-      "localStations": {},
-      "reroutes": {
-        "Q05R14": {
-          "occurances": 5,
-          "reroutedFrom": "Q05",
-          "reroutedTo": "R14",
-          "sudden": false,
-          "via": "Q"
+      "skippedStations": {
+        "R15R15": {
+          "occurances": 2,
+          "stations": [
+            "R15"
+          ]
         }
       },
-      "skippedStations": {},
-      "suspended": {}
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "D43Q05": {
+          "occurances": 2,
+          "startTime": 1308,
+          "stations": [
+            "D43",
+            "Q05"
+          ]
+        },
+        "D43R01": {
+          "occurances": 10,
+          "startTime": 1158,
+          "stations": [
+            "D43",
+            "R01"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    }
+  },
+  "Q": {
+    "new": {
+      "D43": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -48.4444444444444,
+          "delays": {
+
+          },
+          "trainsInService": 9
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "Q05": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -185,
+          "delays": {
+
+          },
+          "trainsInService": 8
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
+    "northbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "D43Q05": {
+          "occurances": 13,
+          "startTime": 618,
+          "stations": [
+            "D43",
+            "Q05"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    }
+  },
+  "R": {
+    "new": {
+      "G08": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 306.076923076923,
+          "delays": {
+
+          },
+          "trainsInService": 13
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "R45": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -72.5,
+          "delays": {
+
+          },
+          "trainsInService": 10
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
+    "northbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "G08R36": {
+          "occurances": 1,
+          "startTime": 2298,
+          "stations": [
+            "G08",
+            "R36"
+          ]
+        },
+        "G08R45": {
+          "occurances": 12,
+          "startTime": 708,
+          "stations": [
+            "G08",
+            "R45"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    }
+  },
+  "SI": {
+    "new": {
+      "S09": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": 358,
+          "delays": {
+            "087600_SI..S*SI": {
+              "delayAmmount": 160,
+              "destination": "S09",
+              "location": "S30",
+              "track": "2"
+            }
+          },
+          "trainsInService": 2
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "S31": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": 127,
+          "delays": {
+
+          },
+          "trainsInService": 2
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
+    "northbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "S09S31": {
+          "occurances": 4,
+          "startTime": 1188,
+          "stations": [
+            "S09",
+            "S31"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+        "087600_SI..S*SI": {
+          "delayAmmount": 160,
+          "destination": "S09",
+          "location": "S30",
+          "track": "2"
+        }
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    }
+  },
+  "W": {
+    "new": {
+      "R01": {
+        "direction": "northbound",
+        "performance": {
+          "OTP": -162.333333333333,
+          "delays": {
+
+          },
+          "trainsInService": 3
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      },
+      "R27": {
+        "direction": "southbound",
+        "performance": {
+          "OTP": -201,
+          "delays": {
+
+          },
+          "trainsInService": 4
+        },
+        "reroutes": {
+
+        },
+        "serviceAlerts": {
+          "localStations": {
+
+          },
+          "skippedStations": {
+
+          },
+          "suspended": {
+
+          }
+        }
+      }
+    },
+    "northbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
+    },
+    "overview": {
+      "segments": {
+        "R01R27": {
+          "occurances": 10,
+          "startTime": 678,
+          "stations": [
+            "R01",
+            "R27"
+          ]
+        }
+      },
+      "service": true,
+      "trainsInService": 0
+    },
+    "southbound": {
+      "delays": {
+
+      },
+      "extended": [],
+      "localStations": {
+
+      },
+      "reroutes": {
+
+      },
+      "skippedStations": {
+
+      },
+      "suspended": {
+
+      }
     }
   }
 }

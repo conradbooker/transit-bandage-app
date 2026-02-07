@@ -20,10 +20,10 @@ struct LineShape_Bus: View {
             Group {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color("cDarkGray"))
+                        .foregroundColor(bgColor.first.value)
                         .frame(width: imageSize-0.3, height: imageSize-0.3)
                     Circle()
-                        .strokeBorder(Color("cDarkGray"),lineWidth: 3)
+                        .strokeBorder(bgColor.first.value,lineWidth: 3)
                         .background(
                             Circle()
                                 .foregroundColor(getLineColor_Bus(line: line, time: trip.stations[station]?.times[0] ?? 0))
@@ -73,8 +73,11 @@ struct BusTrip_Stop: View {
                 VStack(alignment: .leading, spacing: 0) {
                     Text(busData_dictionary[station]?.short2 ?? "")
 //                    if (busData_dictionary[station]?.short2 ?? "") != "" {
-                        Text(busData_dictionary[station]?.short1 ?? "")
-                            .font(.subheadline)
+                    Text(busData_dictionary[station]?.short1 ?? "")
+                        .font(.subheadline)
+//                    Text(station)
+//                        .font(.subheadline)
+
 //                    }
 //                    HStack(spacing: 1.5) {
 //                        ForEach(stationsDict[station]?.weekdayLines ?? [""], id: \.self) { bullet in

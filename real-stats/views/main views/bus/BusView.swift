@@ -36,7 +36,7 @@ struct BusView: View {
         var newStations = [String]()
         
         for num in 0...40 {
-            newStations.append(stations[num].id)
+            newStations.append(String(stations[num].id))
         }
                 
         return newStations
@@ -258,6 +258,12 @@ struct BusView: View {
                 }
             } else {
                 ScrollView {
+//                    ForEach(getNearByBusStops(coordinate: coordinate), id: \.self) { stop in
+//                        Text("----")
+//                        Text(stop)
+//                        Text(busData_dictionary[stop]?.name ?? "")
+//                        Text("----")
+//                    }
                     if isInternetConnected {
                         ForEach(sortedBusStops, id: \.self) { stop in
                             sortedBusStop(lines: stop.lines, times: stop.times, stop_ids: stop.stop_ids)

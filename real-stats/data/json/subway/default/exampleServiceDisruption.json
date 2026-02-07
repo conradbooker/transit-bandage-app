@@ -1,57 +1,381 @@
 {
-  "northbound": {
-    "delays": {
-        "24313..A": {
-            "destination": "A31",
-            "delayAmmount": 240,
-            "location": "A30"
+    "overview": {
+      "segments": {
+        "A02A65": {
+          "occurances": 6,
+          "startTime": 1308,
+          "stations": [
+            "A02",
+            "A65"
+          ]
+        },
+        "A02H11": {
+          "occurances": 7,
+          "startTime": 768,
+          "stations": [
+            "A02",
+            "H11"
+          ]
         }
+      },
+      "service": true,
+      "trainsInService": 0
     },
-    "extended": [],
-    "localStations": {
-        "416416": {
-              "occurances": 3,
-              "stations": [
-                  "416",
-                  "418",
-                  "419",
-                  "420"
-              ]
-          }
-    },
-    "reroutes": {
-        "A41A32": {
-           "reroutedFrom": "A41",
-           "reroutedTo": "A32",
-           "via": "F",
-           "sudden": false,
-           "occurances": 13
-        }
-    },
-    "skippedStations": {
-      "416416": {
-        "occurances": 3,
-        "stations": [
-            "416",
-            "418",
-            "419",
-            "420"
-        ]
+   "northbound": {
+      "delays": {
+         "067500_D..N07X133*D": {
+            "destination": "D01",
+            "delayAmmount": 130,
+            "location": "A22",
+            "track": "2"
+         },
+         "068350_C..N04R*C": {
+            "destination": "A09",
+            "delayAmmount": 130,
+            "location": "A24",
+            "track": "2"
+         }
+      },
+      "reroutes": {},
+      "extended": [],
+      "localStations": {
+         "A16A22": {
+            "stations": [
+               "A16",
+               "A17",
+               "A18",
+               "A19",
+               "A20",
+               "A21",
+               "A22"
+            ],
+            "occurances": 16
+         }
+      },
+      "skippedStations": {},
+      "suspended": {}
+   },
+   "southbound": {
+      "delays": {
+         "068350_C..N04R*C": {
+            "destination": "A09",
+            "delayAmmount": 130,
+            "location": "A24",
+            "track": "2"
+         }
+      },
+      "reroutes": {},
+      "extended": [],
+      "localStations": {
+         "A33A33": {
+            "stations": [
+               "A33"
+            ],
+            "occurances": 1
+         },
+         "A25A33": {
+            "stations": [
+               "A25",
+               "A30",
+               "A33"
+            ],
+            "occurances": 13
+         }
+      },
+      "skippedStations": {},
+      "suspended": {}
+   },
+   "new": {
+      "A02": {
+         "direction": "northbound",
+         "performance": {
+            "OTP": 442.4,
+            "trainsInService": 10,
+            "delays": {
+               "067500_D..N07X133*D": {
+                  "destination": "D01",
+                  "delayAmmount": 130,
+                  "location": "A22",
+                  "track": "2"
+               }
+            }
+         },
+         "reroutes": {
+             "R23R30": {
+                "reroutedFrom": "R23",
+                "reroutedTo": "R30",
+                "via": "R",
+                "sudden": false,
+                "occurances": 11
+             },
+             "R36D43": {
+                "reroutedFrom": "R36",
+                "reroutedTo": "D43",
+                "via": "D",
+                "sudden": false,
+                "occurances": 11
+             }
+         },
+         "serviceAlerts": {
+            "suspended": {
+                "250257": {
+                   "stations": [
+                      "250",
+                      "257"
+                   ],
+                   "occurances": 7
+                }
+            },
+            "localStations": {
+               "A09A24": {
+                  "from": "A24",
+                  "to": "A09",
+                  "stations": [
+                     [
+                        "A22",
+                        "A21",
+                        "A20",
+                        "A19",
+                        "A18",
+                        "A17",
+                        "A16"
+                     ],
+                     [
+                         
+                     ]
+                  ],
+                  "skipping": [
+                     "A14",
+                     "A11",
+                     "A10"
+                  ],
+                  "occurances": 16
+               }
+            },
+            "skippedStations": {
+               "A61H01": {
+                  "type": "skipping",
+                  "from": "H01",
+                  "to": "A61",
+                  "stations": [
+                     [
+                         "A65",
+                         "A64",
+                         "A63"
+                     ]
+                  ],
+                  "stoppingAt": [],
+                  "occurances": 6
+               },
+               "A15A09": {
+                  "type": "express",
+                  "from": "A24",
+                  "to": "A09",
+                  "stations": [
+                      [
+                        "A22",
+                        "A21",
+                        "A20",
+                        "A19",
+                        "A18",
+                        "A17",
+                        "A16"
+                      ],
+                      [
+                        "A14"
+                      ],
+                      [
+                        "A11",
+                        "A10"
+                      ]
+                  ],
+                  "stoppingAt": [],
+                  "occurances": 6
+               }
+            }
+         }
+      },
+      "H11": {
+         "direction": "southbound",
+         "performance": {
+            "OTP": 156.25,
+            "trainsInService": 4,
+            "delays": {}
+         },
+         "reroutes": {
+             "R23R30": {
+                "reroutedFrom": "R23",
+                "reroutedTo": "R30",
+                "via": "R",
+                "sudden": false,
+                "occurances": 11
+             },
+             "R36D43": {
+                "reroutedFrom": "R36",
+                "reroutedTo": "D43",
+                "via": "D",
+                "sudden": false,
+                "occurances": 11
+             }
+         },
+         "serviceAlerts": {
+            "suspended": {
+                "250257": {
+                   "stations": [
+                      "250",
+                      "257"
+                   ],
+                   "occurances": 7
+                }
+            },
+            "localStations": {
+               "H02A32": {
+                  "from": "A32",
+                  "to": "H02",
+                  "stations": [
+                     [
+                        "A33"
+                     ]
+                  ],
+                  "skipping": [],
+                  "occurances": 1
+               },
+               "H02A24": {
+                  "from": "A24",
+                  "to": "H02",
+                  "stations": [
+                     [
+                        "A25",
+                        "A30",
+                        "A33"
+                     ]
+                  ],
+                  "skipping": [],
+                  "occurances": 6
+               }
+            },
+            "skippedStations": {
+               "H02A42": {
+                  "type": "skipping",
+                  "from": "A42",
+                  "to": "H02",
+                  "stations": [
+                     [
+                         "A43",
+                         "A44",
+                         "A45",
+                         "A47",
+                         "A49",
+                         "A50",
+                         "A52",
+                         "A53",
+                         "A54",
+                         "A63",
+                         "A64",
+                         "A65",
+                         "H01"
+                     ]
+                  ],
+                  "stoppingAt": [],
+                  "occurances": 1
+               },
+               "A15A12": {
+                  "type": "express",
+                  "from": "A12",
+                  "to": "A15",
+                  "stations": [
+                     [
+                        "D13",
+                        "A14"
+                     ]
+                  ],
+                  "stoppingAt": [],
+                  "occurances": 1
+               },
+               "A15A09": {
+                  "type": "express",
+                  "from": "A09",
+                  "to": "A15",
+                  "stations": [
+                     [
+                        "A10",
+                        "A11",
+                        "D13",
+                        "A14"
+                     ]
+                  ],
+                  "stoppingAt": [],
+                  "occurances": 5
+               }
+            }
+         }
+      },
+      "A65": {
+         "direction": "southbound",
+         "performance": {
+            "OTP": 87.25,
+            "trainsInService": 4,
+            "delays": {}
+         },
+         "reroutes": {
+             "R23R30": {
+                "reroutedFrom": "R23",
+                "reroutedTo": "R30",
+                "via": "R",
+                "sudden": false,
+                "occurances": 11
+             },
+             "R36D43": {
+                "reroutedFrom": "R36",
+                "reroutedTo": "D43",
+                "via": "D",
+                "sudden": false,
+                "occurances": 11
+             }
+         },
+         "serviceAlerts": {
+            "suspended": {
+                "250257": {
+                   "stations": [
+                      "250",
+                      "257"
+                   ],
+                   "occurances": 7
+                }
+            },
+            "localStations": {
+               "A55A24": {
+                  "from": "A24",
+                  "to": "A55",
+                  "stations": [
+                     [
+                        "A25",
+                        "A30",
+                        "A33"
+                     ]
+                  ],
+                  "skipping": [],
+                  "occurances": 7
+               }
+            },
+            "skippedStations": {
+               "A15A09": {
+                  "type": "express",
+                  "from": "A09",
+                  "to": "A15",
+                  "stations": [
+                     [
+                        "A10",
+                        "A11",
+                        "D13",
+                        "A14"
+                     ]
+                  ],
+                  "stoppingAt": [],
+                  "occurances": 6
+               }
+            }
+         }
       }
-    },
-    "suspended": {
-        "A32A41": {
-            "stations": ["A55","H11"],
-            "occurances": 4
-        }
-    }
-  },
-  "southbound": {
-    "delays": {},
-    "extended": [],
-    "localStations": {},
-    "reroutes": {},
-    "skippedStations": {},
-    "suspended": {}
-  }
+   }
 }

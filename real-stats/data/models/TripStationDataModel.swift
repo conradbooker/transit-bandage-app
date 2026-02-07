@@ -10,6 +10,7 @@ import Foundation
 struct TripStationEntry: Hashable, Codable {
     var stationID: Int
     var complexID: Int
+    var short: String
     var short1: String
     var short2: String
     var stationName: String

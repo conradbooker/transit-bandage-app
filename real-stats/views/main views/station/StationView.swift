@@ -6,15 +6,22 @@
 //
 
 import SwiftUI
-import WrappingHStack
+//import WrappingHStack
 import StoreKit
 import Reachability
 import CoreLocation
+import WrappingStack
 
-func getSortedTimes(direction: [String: NewStationTime]?) -> [String] {
+func getSortedTimes(direction: [String: NewStationTime]?, destination: String = "", track: String = "") -> [String] {
     var arr = [String]()
     for time in direction!.keys {
-        arr.append(time)
+        if destination == "" {
+            arr.append(time)
+        } else {
+            if destination == direction?[time]?.destination && track == direction?[time]?.track {
+                arr.append(time)
+            }
+        }
     }
     arr = arr.sorted()
     return Array(arr.prefix(3))
@@ -45,7 +52,6 @@ struct StationView: View {
     @FetchRequest(entity: FavoriteStation.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var favoriteStations: FetchedResults<FavoriteStation>
 
     @Environment(\.managedObjectContext) private var viewContext
-//    @Environment(\.dismiss) var dismiss
     let persistedContainer = CoreDataManager.shared.persistentContainer
     
     var complex: Complex
@@ -89,14 +95,10 @@ struct StationView: View {
         self._isFavorited = State(initialValue: isFavorited)
         
     }
-    
-    /*
-     for station in fetchrequests favorites, if favorites.chosen id == complex.id, isfavorited = false
-     */
-        
+            
     func deleteFavorite() {
         for favoriteStation in favoriteStations {
-            print(favoriteStation)
+//            print(favoriteStation)
             if favoriteStation.complexID == complex.id && favoriteStation.chosenStationNumber == chosenStation {
                 viewContext.delete(favoriteStation)
                 do {
@@ -109,9 +111,6 @@ struct StationView: View {
     }
     
     func addFavorite() {
-//        if favoriteStations.count > 1 {
-//            requestReview()
-//        }
         let favoriteStation = FavoriteStation(context: viewContext)
         favoriteStation.complexID = Int16(complex.id)
         favoriteStation.chosenStationNumber = Int16(chosenStation)
@@ -126,6 +125,71 @@ struct StationView: View {
     @State private var loading = 0
     @State private var showBus = false
     
+    @AppStorage("trackTimes") var trackTimes: Bool = true
+    
+    var isStatenIsland: Bool {
+        if ["S09", "S31", "D43", "247", "701", "726", "401", "601", "901"].contains(complex.stations[chosenStation].GTFSID) {
+            return true
+        }
+        return false
+    }
+    
+    private func getTimesWithTracks() -> NewTimesTrack {
+        var fullDictNorth = [String: [String: [String: NewStationTime]]]()
+        
+        for line in Array(times.north!.keys).sorted() {
+            var destinations: Set<String> = Set<String>()
+            
+            for individual_time in Array(arrayLiteral: times.north![line]!) {
+                let allTimes = (individual_time ?? [String : NewStationTime]())
+
+                for actualTime in allTimes {
+                    let track = String(actualTime.value.track ?? "")
+                    let destination = String(actualTime.value.destination)
+                    
+                    if Array(fullDictNorth.keys ?? [:].keys).contains(track) {
+                        if Array(fullDictNorth[track]?.keys ?? [:].keys).contains("\(line)*\(destination)") {
+                            fullDictNorth[track]?["\(line)*\(destination)"]?[String(actualTime.key)] = actualTime.value
+                        } else {
+                            fullDictNorth[track]?["\(line)*\(destination)"] = [String(actualTime.key): actualTime.value]
+                        }
+                    } else {
+                        fullDictNorth[track] = ["\(line)*\(destination)": [String(actualTime.key): actualTime.value]]
+                    }
+                }
+            }
+        }
+        
+        
+        var fullDictSouth = [String: [String: [String: NewStationTime]]]()
+        
+        for line in Array(times.south!.keys).sorted() {
+            var destinations: Set<String> = Set<String>()
+            
+            for individual_time in Array(arrayLiteral: times.south![line]!) {
+                let allTimes = (individual_time ?? [String : NewStationTime]())
+
+                for actualTime in allTimes {
+                    let track = String(actualTime.value.track ?? "")
+                    let destination = String(actualTime.value.destination)
+                    
+                    if Array(fullDictSouth.keys ?? [:].keys).contains(track) {
+                        if Array(fullDictSouth[track]?.keys ?? [:].keys).contains("\(line)*\(destination)") {
+                            fullDictSouth[track]?["\(line)*\(destination)"]?[String(actualTime.key)] = actualTime.value
+                        } else {
+                            fullDictSouth[track]?["\(line)*\(destination)"] = [String(actualTime.key): actualTime.value]
+                        }
+                    } else {
+                        fullDictSouth[track] = ["\(line)*\(destination)": [String(actualTime.key): actualTime.value]]
+                    }
+                }
+            }
+        }
+//        print(fullDict)
+        let thingToReturn = NewTimesTrack(service: true, north: fullDictNorth, south: fullDictSouth)
+        return thingToReturn
+    }
+    
     var body: some View {
         ZStack {
             GeometryReader { geometry in
@@ -136,6 +200,9 @@ struct StationView: View {
                         .onAppear {
                             checkInternetConnection()
                         }
+                        .onAppear {
+                            print("updating...")
+                        }
                     ScrollView {
                         if showBus {
                             Spacer().frame(height:lineSelectorSize.height + short1Size.height + short2Size.height + 40)
@@ -143,9 +210,9 @@ struct StationView: View {
                         } else {
                             VStack(alignment: .leading) {
                                 Spacer().frame(height:lineSelectorSize.height + short1Size.height + short2Size.height + 40)
-                                    .onAppear {
-                                        print(chosenStation)
-                                    }
+//                                    .onAppear {
+//                                        print(chosenStation)
+//                                    }
                                 
                                 // MARK: - No Wifi
                                 
@@ -190,9 +257,9 @@ struct StationView: View {
                                         }
                                     }
                                     if times.service {
-                                        // MARK: - North Times
                                         if (Array(times.north!.keys).sorted().count < 1) {
                                             if loading < 2 {
+// MARK: - No North Service
                                                 ZStack {
                                                     RoundedRectangle(cornerRadius: 10)
                                                         .foregroundColor(bgColor.second.value)
@@ -217,28 +284,72 @@ struct StationView: View {
                                                     loading += 1
                                                 }
                                             }
+// MARK: - North Times
                                         } else if loading < 2 {
                                             Text(complex.stations[chosenStation].northDir)
                                                 .font(.title3)
                                                 .padding(.horizontal)
                                                 .padding(.top,2)
+                                                .padding(.bottom, -4)
                                                 .onAppear {
                                                     loading = 0
                                                 }
-                                            ForEach(Array(times.north!.keys).sorted(), id: \.self) { line in
-                                                StationTimeRow(
-                                                    line: line,
-                                                    direction: "N",
-                                                    trainTimes: times,
-                                                    times: getSortedTimes(direction: times.north![line]!!),
-                                                    trips: trips
-                                                )
-                                                .environment(\.managedObjectContext, persistentContainer.viewContext)
-                                                .padding(.horizontal,5)
-                                                .frame(height: 55)
+                                            // sorted track things would go here
+                                            if trackTimes {
+                                                ForEach(Array(getTimesWithTracks().north?.keys ?? [:].keys).sorted(), id: \.self) { track in
+                                                    if isStatenIsland || Int(track) ?? 0 > 4 {
+                                                        Text("Track \(track)")
+                                                            .padding(.horizontal)
+                                                            .padding(.top, 1)
+                                                            .padding(.bottom, -2)
+                                                    } else if Int(track) ?? 0 <= 0  {
+                                                    } else if trackNames[complex.stations[chosenStation].GTFSID]?.showTrackLabel == true {
+                                                        Text(trackNames[complex.stations[chosenStation].GTFSID]?.tracks[Int(Int(track) ?? 0)-1] ?? "")
+                                                            .padding(.horizontal)
+                                                            .padding(.top, 1)
+                                                            .padding(.bottom, -2)
+                                                    }
+
+//                                                    trackNames[complex.stations[chosenStation].GTFSID]?.tracks[Int(track) ?? 0]
+                                                    ForEach(Array(getTimesWithTracks().north?[track]!!.keys ?? [:].keys).sorted(), id: \.self) { line in
+                                                        //                                                        Text(line)
+                                                        StationTimeRow(
+                                                            line: String(String(line).split(separator: "*")[0]),
+                                                            direction: "N",
+                                                            trainTimes: times,
+                                                            times: getSortedTimes(
+                                                                direction: times.north![String(String(line).split(separator: "*")[0])]!!,
+                                                                destination: String(String(line).split(separator: "*")[1]),
+                                                                track: track
+                                                            ),
+                                                            trips: trips
+                                                        )
+                                                        .environment(\.managedObjectContext, persistentContainer.viewContext)
+                                                        .padding(.horizontal,5)
+                                                        .frame(height: 55)
+                                                    }
+                                                }
+                                            } else {
+                                                ForEach(Array(times.north!.keys).sorted(), id: \.self) { line in
+                                                    StationTimeRow(
+                                                        line: line,
+                                                        direction: "N",
+                                                        trainTimes: times,
+                                                        times: getSortedTimes(direction: times.north![line]!!),
+                                                        trips: trips
+                                                    )
+                                                    .environment(\.managedObjectContext, persistentContainer.viewContext)
+                                                    .padding(.horizontal,5)
+                                                    .frame(height: 55)
+//                                                    .onAppear {
+//                                                        print("-----")
+//                                                        print(trips)
+//                                                    }
+                                                    
+                                                }
                                             }
                                         }
-                                        // MARK: - South Times
+// MARK: - No South Loading
                                         if (Array(times.south!.keys).sorted().count < 1) {
                                             if loading < 2 {
                                                 ZStack {
@@ -265,26 +376,67 @@ struct StationView: View {
                                                     loading += 1
                                                 }
                                             }
+// MARK: - South Times
                                         } else if loading < 2 {
                                             Divider()
                                                 .padding(.top)
                                             Text(complex.stations[chosenStation].southDir)
                                                 .font(.title3)
                                                 .padding(.horizontal)
+                                                .padding(.bottom, -4)
                                                 .onAppear {
                                                     loading = 0
                                                 }
-                                            ForEach(Array(times.south!.keys).sorted(), id: \.self) { line in
-                                                StationTimeRow(
-                                                    line: line,
-                                                    direction: "S",
-                                                    trainTimes: times,
-                                                    times: getSortedTimes(direction: times.south![line]!!),
-                                                    trips: trips
-                                                )
-                                                .environment(\.managedObjectContext, persistentContainer.viewContext)
-                                                .padding(.horizontal,5)
-                                                .frame(height: 55)
+                                            if trackTimes {
+                                                ForEach(Array(getTimesWithTracks().south?.keys ?? [:].keys).sorted(), id: \.self) { track in
+                                                    if isStatenIsland || Int(track) ?? 0 > 4 {
+                                                        Text("Track \(track)")
+                                                            .padding(.horizontal)
+                                                            .padding(.top, 1)
+                                                            .padding(.bottom, -2)
+                                                    } else if Int(track) ?? 0 <= 0  {
+                                                    } else if trackNames[complex.stations[chosenStation].GTFSID]?.showTrackLabel == true {
+                                                        Text(trackNames[complex.stations[chosenStation].GTFSID]?.tracks[Int(Int(track) ?? 0)-1] ?? "")
+                                                            .padding(.horizontal)
+                                                            .padding(.top, 1)
+                                                            .padding(.bottom, -2)
+                                                    }
+
+                                                    ForEach(Array(getTimesWithTracks().south?[track]!!.keys ?? [:].keys).sorted(), id: \.self) { line in
+//                                                        Text(line)
+                                                        StationTimeRow(
+                                                            line: String(String(line).split(separator: "*")[0]),
+                                                            direction: "S",
+                                                            trainTimes: times,
+                                                            times: getSortedTimes(
+                                                                direction: times.south![String(String(line).split(separator: "*")[0])]!!,
+                                                                destination: String(String(line).split(separator: "*")[1]),
+                                                                track: track
+                                                            ),
+                                                            trips: trips
+                                                        )
+                                                        .environment(\.managedObjectContext, persistentContainer.viewContext)
+                                                        .padding(.horizontal,5)
+                                                        .frame(height: 55)
+//                                                        .onAppear {
+//                                                            print("--=++--")
+//                                                            print(trips)
+//                                                        }
+                                                    }
+                                                }
+                                            } else {
+                                                ForEach(Array(times.south!.keys).sorted(), id: \.self) { line in
+                                                    StationTimeRow(
+                                                        line: line,
+                                                        direction: "S",
+                                                        trainTimes: times,
+                                                        times: getSortedTimes(direction: times.south![line]!!),
+                                                        trips: trips
+                                                    )
+                                                    .environment(\.managedObjectContext, persistentContainer.viewContext)
+                                                    .padding(.horizontal,5)
+                                                    .frame(height: 55)
+                                                }
                                             }
                                         }
                                     } else {
@@ -308,7 +460,7 @@ struct StationView: View {
                                         }
                                     }
                                     Spacer()
-                                        .frame(height: 200)
+                                        .frame(height: 100)
                                 }
                                 
                             }
@@ -378,13 +530,11 @@ struct StationView: View {
                                             isFavorited = false
                                         }
                                         deleteFavorite()
-                                        //                                    delete
                                     } else {
                                         withAnimation(.linear(duration: 0.1)) {
                                             isFavorited = true
                                         }
                                         addFavorite()
-                                        //                                    add new instance of favorites
                                     }
                                 } label: {
                                     Image(systemName: isFavorited ? "star.fill" : "star")
@@ -398,128 +548,130 @@ struct StationView: View {
                             }
                             
                             // MARK: - Station Selector
-                            WrappingHStack(0..<complex.stations.count+1, id: \.self,spacing: .constant(0)) { index in
-                                if index == complex.stations.count {
-                                    Button {
-                                        withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
-                                            showBus = true
-                                            refreshButtonRotation += 360
-                                            checkInternetConnection()
-                                            loading = 2
-                                        }
-                                    } label: {
-                                        VStack {
-                                            ZStack {
-                                                if showBus {
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .foregroundColor(bgColor.third.value)
-                                                        .frame(width: 100, height: 40)
-                                                        .overlay(
-                                                            RoundedRectangle(cornerRadius: 13)
-                                                                .stroke(.blue,lineWidth: 2)
-                                                                .frame(width: 108, height: 48)
-                                                        )
-                                                        .shadow(radius: 2)
-                                                } else {
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .foregroundColor(bgColor.third.value)
-                                                        .frame(width: 68, height: 40)
-                                                        .shadow(radius: 2)
-                                                        .overlay(
-                                                            RoundedRectangle(cornerRadius: 12)
-                                                                .stroke(bgColor.second.value,lineWidth: 2)
-                                                                .frame(width: 76, height: 48)
-                                                        )
-                                                    
-                                                }
-                                                HStack(spacing: 2.5) {
-                                                    Image("BUS")
-                                                        .resizable()
-                                                        .frame(width: 60, height: 30)
-                                                    if showBus {
-                                                        Image(systemName: "arrow.clockwise")
-                                                            .frame(width: 30, height: 30)
-                                                            .rotationEffect(.degrees(refreshButtonRotation))
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        
-                                    }
-                                    .padding([.leading,.bottom])
-                                    .buttonStyle(CButton())
-                                    
-                                } else {
-                                    Button {
-                                        withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
-                                            showBus = false
-                                            chosenStation = index
-                                            refreshButtonRotation += 360
-                                            checkInternetConnection()
-                                            loading = 2
-                                        }
-                                        
-                                        apiCall().getStationAndTrips(station: complex.stations[chosenStation].GTFSID) { (stationAndTrip) in
+                            WrappingHStack(id: \.self, alignment: .leading) {
+                                ForEach(0..<complex.stations.count+1, id: \.self) { index in
+                                    if index == complex.stations.count {
+                                        Button {
                                             withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
-                                                self.times = stationAndTrip.station
-                                                self.trips = stationAndTrip.trips
-                                                //                                    print(stationAndTrip)
-                                                withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
-                                                    loading = 0
-                                                }
-                                                
+                                                showBus = true
+                                                refreshButtonRotation += 360
+                                                checkInternetConnection()
+                                                loading = 2
                                             }
-                                        }
-                                    } label: {
-                                        VStack {
-                                            ZStack {
-                                                if chosenStation == index && !showBus {
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .foregroundColor(bgColor.third.value)
-                                                        .frame(width: getWidth(complex.stations[index].weekdayLines) + 30, height: 40)
-                                                        .overlay(
-                                                            RoundedRectangle(cornerRadius: 13)
-                                                                .stroke(.blue,lineWidth: 2)
-                                                                .frame(width: getWidth(complex.stations[index].weekdayLines) + 38, height: 48)
-                                                        )
-                                                        .shadow(radius: 2)
-                                                } else {
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .foregroundColor(bgColor.third.value)
-                                                        .frame(width: getWidth(complex.stations[index].weekdayLines), height: 40)
-                                                        .shadow(radius: 2)
-                                                        .overlay(
-                                                            RoundedRectangle(cornerRadius: 12)
-                                                                .stroke(bgColor.second.value,lineWidth: 2)
-                                                                .frame(width: getWidth(complex.stations[index].weekdayLines) + 8, height: 48)
-                                                        )
-                                                    
-                                                }
-                                                HStack(spacing: 2.5) {
-                                                    ForEach(complex.stations[index].weekdayLines, id: \.self) { line in
-                                                        if line == "PATH" {
-                                                            Image(line)
-                                                                .resizable()
-                                                                .frame(width: 60, height: 30)
-                                                        } else {
-                                                            Image(line)
-                                                                .resizable()
+                                        } label: {
+                                            VStack {
+                                                ZStack {
+                                                    if showBus {
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .foregroundColor(bgColor.third.value)
+                                                            .frame(width: 100, height: 40)
+                                                            .overlay(
+                                                                RoundedRectangle(cornerRadius: 13)
+                                                                    .stroke(.blue,lineWidth: 2)
+                                                                    .frame(width: 108, height: 48)
+                                                            )
+                                                            .shadow(radius: 2)
+                                                    } else {
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .foregroundColor(bgColor.third.value)
+                                                            .frame(width: 68, height: 40)
+                                                            .shadow(radius: 2)
+                                                            .overlay(
+                                                                RoundedRectangle(cornerRadius: 12)
+                                                                    .stroke(bgColor.second.value,lineWidth: 2)
+                                                                    .frame(width: 76, height: 48)
+                                                            )
+                                                        
+                                                    }
+                                                    HStack(spacing: 2.5) {
+                                                        Image("BUS")
+                                                            .resizable()
+                                                            .frame(width: 60, height: 30)
+                                                        if showBus {
+                                                            Image(systemName: "arrow.clockwise")
                                                                 .frame(width: 30, height: 30)
+                                                                .rotationEffect(.degrees(refreshButtonRotation))
                                                         }
                                                     }
+                                                }
+                                            }
+                                            
+                                        }
+                                        .padding([.leading,.bottom])
+                                        .buttonStyle(CButton())
+                                        
+                                    } else {
+                                        Button {
+                                            withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
+                                                showBus = false
+                                                chosenStation = index
+                                                refreshButtonRotation += 360
+                                                checkInternetConnection()
+                                                loading = 2
+                                            }
+                                            
+                                            apiCall().getStationAndTrips(station: complex.stations[chosenStation].GTFSID) { (stationAndTrip) in
+                                                withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
+                                                    self.times = stationAndTrip.station
+                                                    self.trips = stationAndTrip.trips
+                                                    //                                    print(stationAndTrip)
+                                                    withAnimation(.spring(response: 0.31, dampingFraction: 1-0.26)) {
+                                                        loading = 0
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        } label: {
+                                            VStack {
+                                                ZStack {
                                                     if chosenStation == index && !showBus {
-                                                        Image(systemName: "arrow.clockwise")
-                                                            .frame(width: 30, height: 30)
-                                                            .rotationEffect(.degrees(refreshButtonRotation))
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .foregroundColor(bgColor.third.value)
+                                                            .frame(width: getWidth(complex.stations[index].weekdayLines) + 30, height: 40)
+                                                            .overlay(
+                                                                RoundedRectangle(cornerRadius: 13)
+                                                                    .stroke(.blue,lineWidth: 2)
+                                                                    .frame(width: getWidth(complex.stations[index].weekdayLines) + 38, height: 48)
+                                                            )
+                                                            .shadow(radius: 2)
+                                                    } else {
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .foregroundColor(bgColor.third.value)
+                                                            .frame(width: getWidth(complex.stations[index].weekdayLines), height: 40)
+                                                            .shadow(radius: 2)
+                                                            .overlay(
+                                                                RoundedRectangle(cornerRadius: 12)
+                                                                    .stroke(bgColor.second.value,lineWidth: 2)
+                                                                    .frame(width: getWidth(complex.stations[index].weekdayLines) + 8, height: 48)
+                                                            )
+                                                        
+                                                    }
+                                                    HStack(spacing: 2.5) {
+                                                        ForEach(complex.stations[index].weekdayLines, id: \.self) { line in
+                                                            if line == "PATH" {
+                                                                Image(line)
+                                                                    .resizable()
+                                                                    .frame(width: 60, height: 30)
+                                                            } else {
+                                                                Image(line)
+                                                                    .resizable()
+                                                                    .frame(width: 30, height: 30)
+                                                            }
+                                                        }
+                                                        if chosenStation == index && !showBus {
+                                                            Image(systemName: "arrow.clockwise")
+                                                                .frame(width: 30, height: 30)
+                                                                .rotationEffect(.degrees(refreshButtonRotation))
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
+                                        .padding([.leading,.bottom])
+                                        .buttonStyle(CButton())
                                     }
-                                    .padding([.leading,.bottom])
-                                    .buttonStyle(CButton())
+                                    
                                 }
-                                
                             }
                             .readSize { size in
                                 lineSelectorSize = size

@@ -15,9 +15,6 @@ enum disruption {
     case reroutes
 }
 
-var defaultStationTimes: NewTimes = load("608.json")
-var placeHolderStationTimes: NewTimes = load("601.json")
-
 struct LineItem: Identifiable {
     var id = UUID()
     var direction: String
@@ -66,9 +63,14 @@ struct StationTimeRow: View {
     var track: String = ""
 
     @State private var tripIDs = [String]()
+    
+    @State private var fromFavorites = false
+    
+    @FetchRequest(entity: FavoriteLine.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var favoriteLines: FetchedResults<FavoriteLine>
 
     init(line: String, direction: String, trainTimes: NewTimes, times: [String], trips: [String: Trip]) {
         self.line = line
+                
         self.trainTimes = trainTimes
         self.times = times
         self.direction = direction
@@ -80,7 +82,7 @@ struct StationTimeRow: View {
         self.trips = trips
         self.currentStation = stationsDict[
             getCurrentStationClean(stations:trips[tripID]?.stations ?? [:])
-        ]?.short1 ?? ""
+        ]?.short ?? ""
         if direction == "N" {
             if times.count > 2 {
                 trip3ID = trainTimes.north?[line]??[times[2]]?.tripID ?? ""
@@ -141,6 +143,7 @@ struct StationTimeRow: View {
                             .frame(width: geometry.size.width*2.7/12, height: 55)
                         }
                         .buttonStyle(CButton())
+                        
                     }
                     // MARK: - Second Time
                     HStack(spacing: 0) {
@@ -197,7 +200,7 @@ struct StationTimeRow: View {
                                     VStack(alignment: .leading) {
                                         Text(stationsDict[
                                             trips[trip1ID]?.destination ?? ""
-                                        ]?.short1 ?? "Broad Channel")
+                                        ]?.short ?? "Broad Channel")
                                         .fontWeight(.bold)
                                         if (trips[trip1ID]?.delay ?? 0 < 60) {
                                             Text(getCurrentStation(stations: trips[trip1ID]?.stations ?? [:]))
@@ -208,8 +211,8 @@ struct StationTimeRow: View {
                                                 .foregroundColor(Color("red"))
                                                 .font(.footnote)
                                         }
-                                        Text("Track " + track)
-                                            .font(.footnote)
+//                                        Text("Track " + track)
+//                                            .font(.footnote)
                                     }
                                     Spacer()
                                     individualTime(time: Int(times[0]) ?? 0)
@@ -233,6 +236,13 @@ struct StationTimeRow: View {
                                 } else {
                                     selectedDisruption = DisruptionItem(line: line, direction: "south")
                                 }
+                                for favoriteLine in favoriteLines {
+                                    if favoriteLine.line == line {
+                                        fromFavorites = true
+                                        break
+                                    }
+                                    fromFavorites = false
+                                }
                             }
                         } label: {
                             ZStack {
@@ -247,7 +257,7 @@ struct StationTimeRow: View {
                                             .resizable()
                                             .frame(width: 40,height: 40)
                                             .padding(7.5)
-                                            .shadow(radius: 2)
+//                                            .shadow(radius: 2)
                                         if trips[trip1ID]?.serviceDisruptions.skippedStations != [] || trips[trip1ID]?.serviceDisruptions.localStations != [] || trips[trip1ID]?.serviceDisruptions.suspended != [] || trips[trip1ID]?.serviceDisruptions.reroutes != [] {
                                             VStack {
                                                 Spacer()
@@ -277,12 +287,24 @@ struct StationTimeRow: View {
             }
         }
         .sheet(item: $selectedTrip) { trip in
-            TripView(line: trip.line, trip: trip.trip, tripID: trip.tripID)
-                .environment(\.managedObjectContext, persistentContainer.viewContext)
-                .syncLayoutOnDissappear()
+            ZStack {
+                TripView(line: trip.line, trip: trip.trip, tripID: trip.tripID)
+                    .environment(\.managedObjectContext, persistentContainer.viewContext)
+                CloseSheet()
+            }
+            .syncLayoutOnDissappear()
         }.sheet(item: $selectedDisruption) { disruption in
-            serviceAlertsView(line: disruption.line, direction: disruption.direction)
-                .syncLayoutOnDissappear()
+            ZStack {
+                if fromFavorites {
+                    serviceAlertsViewNew(line: disruption.line, direction: disruption.direction, isFavorited: true)
+                        .environment(\.managedObjectContext, persistentContainer.viewContext)
+                } else {
+                    serviceAlertsViewNew(line: disruption.line, direction: disruption.direction, isFavorited: false)
+                        .environment(\.managedObjectContext, persistentContainer.viewContext)
+                }
+                CloseSheet()
+            }
+            .syncLayoutOnDissappear()
         }
     }
 }

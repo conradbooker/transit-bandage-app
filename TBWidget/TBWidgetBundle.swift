@@ -12,6 +12,6 @@ import SwiftUI
 struct TBWidgetBundle: WidgetBundle {
     var body: some Widget {
         TBWidget()
-        TBWidgetLiveActivity()
+//        TBWidgetLiveActivity()
     }
 }

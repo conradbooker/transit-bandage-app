@@ -10,15 +10,6 @@ import SwiftUI
 
 // MARK: - FUNCTIONS
 
-var exampleTripAndStationData: TripAndStation = load("tripAndStationData.json")
-var exampleTrips: [String: Trip] = load("stopTimes.json")
-var exampleTrip: Trip = load("stopTime.json")
-var exampleServiceAlerts: [String: Line_ServiceDisruption] = load("exampleServiceDisruptions.json")
-var exampleServiceAlert: Line_ServiceDisruption = load("exampleServiceDisruption.json")
-var stationsDict: [String: TripStationEntry] = load("tripStationData.json")
-
-var defaultBusTrip: BusTrip = load("defaultBusTrip.json")
-
 func getTripStationKeys(stations: [String: TripStation], all: Bool) -> [String] {
     var arr = [String]()
     var triggered = false
@@ -60,9 +51,9 @@ func getCurrentStation(stations: [String: TripStation]) -> String {
     for station in sortedStations {
         if station.value.times[0] > Int(Date().timeIntervalSince1970) {
             if  station.value.times[0] - Int(Date().timeIntervalSince1970) < 20 {
-                return "@ \(stationsDict[station.key]?.short1 ?? "")"
+                return "@ \(stationsDict[station.key]?.short ?? "")"
             } else {
-                return "→ \(stationsDict[station.key]?.short1 ?? "")"
+                return "→ \(stationsDict[station.key]?.short ?? "")"
             }
         }
     }
@@ -70,7 +61,7 @@ func getCurrentStation(stations: [String: TripStation]) -> String {
 }
 
 func getCurrentStationClean(stations: [String: TripStation]) -> String {
-    let sortedStations = stations.sorted { $0.value.scheduledTime < $1.value.scheduledTime }
+    let sortedStations = stations.sorted { $0.value.times[0] < $1.value.times[0] }
     
     for station in sortedStations {
         if station.value.times[0] - 20 - Int(Date().timeIntervalSince1970) <= 20 && station.value.times[0] - Int(Date().timeIntervalSince1970) > 0 {
@@ -81,7 +72,7 @@ func getCurrentStationClean(stations: [String: TripStation]) -> String {
 }
 
 func getStationBefore(stations: [String: TripStation]) -> String {
-    let sortedStations = stations.sorted { $0.value.scheduledTime < $1.value.scheduledTime }
+    let sortedStations = stations.sorted { $0.value.times[0] < $1.value.times[0] }
     
     var stationBefore = ""
     
@@ -127,7 +118,7 @@ struct TripView: View {
         self._tripID = State(initialValue: tripID)
         self.stationKeys = getTripStationKeys(stations: trip.stations, all: false)
         self.destination = trip.destination
-        self.destination = stationsDict[destination]?.short1 ?? ""
+        self.destination = stationsDict[destination]?.short ?? ""
         print(line, destination)
         if line == "H" && destination.isEmpty {
             destination = "Broad Channel"
@@ -139,7 +130,7 @@ struct TripView: View {
     
     var body: some View {
         ZStack {
-            Color("cDarkGray")
+            bgColor.first.value
                 .ignoresSafeArea()
 // MARK: - START: Bottom part
             ScrollView {
@@ -162,7 +153,7 @@ struct TripView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .frame(width: 130, height: 30)
-                                    .foregroundColor(Color("cLessDarkGray"))
+                                    .foregroundColor(bgColor.third.value)
                                     .shadow(radius: 2)
                                 if all {
                                     Text("Fewer stations")
@@ -268,7 +259,7 @@ struct TripView: View {
                 VStack {
                     Rectangle()
                         .frame(height: serviceSize.height + 87)
-                        .foregroundColor(Color("cDarkGray"))
+                        .foregroundColor(bgColor.third.value)
                         .shadow(radius: 2)
                     Spacer()
                 }
@@ -298,7 +289,7 @@ struct TripView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .frame(width: 30, height: 30)
-                                    .foregroundColor(Color("cLessDarkGray"))
+                                    .foregroundColor(bgColor.fifth.value)
                                     .shadow(radius: 2)
                                 Image(systemName: "arrow.clockwise")
                             }
@@ -333,12 +324,12 @@ struct TripView: View {
                                         if reroute.sudden == true {
                                             RoundedRectangle(cornerRadius: 10)
                                                 .stroke(.yellow,lineWidth: 3)
-                                                .foregroundColor(Color("cLessDarkGray"))
+                                                .foregroundColor(bgColor.fifth.value)
                                                 .frame(width: 130,height: 74)
                                                 .shadow(radius: 2)
                                         } else {
                                             RoundedRectangle(cornerRadius: 10)
-                                                .foregroundColor(Color("cLessDarkGray"))
+                                                .foregroundColor(bgColor.fifth.value)
                                                 .frame(width: 130,height: 74)
                                                 .shadow(radius: 2)
                                         }
@@ -355,7 +346,7 @@ struct TripView: View {
                                     if suspendedStationGroup != [] {
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 10)
-                                                .foregroundColor(Color("cLessDarkGray"))
+                                                .foregroundColor(bgColor.fifth.value)
                                                 .frame(width: 130,height: 74)
                                                 .shadow(radius: 2)
                                             DisruptionBox(type: .suspended, trip: trip, reroute: (exampleTrips["119000_W..S"]?.serviceDisruptions.reroutes[0])!, suspended: suspendedStationGroup)
@@ -370,7 +361,7 @@ struct TripView: View {
                             if trip.serviceDisruptions.localStations.count > 0 {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color("cLessDarkGray"))
+                                        .foregroundColor(bgColor.fifth.value)
                                         .frame(width: 130,height: 74)
                                         .shadow(radius: 2)
                                     DisruptionBox(type: .local, trip: trip, reroute: (exampleTrips["119000_W..S"]?.serviceDisruptions.reroutes[0])!, suspended: ["",""])
@@ -383,7 +374,7 @@ struct TripView: View {
                             if trip.serviceDisruptions.skippedStations.count > 0 {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color("cLessDarkGray"))
+                                        .foregroundColor(bgColor.fifth.value)
                                         .frame(width: 130,height: 74)
                                         .shadow(radius: 2)
                                     DisruptionBox(type: .skipped, trip: trip, reroute: (exampleTrips["119000_W..S"]?.serviceDisruptions.reroutes[0])!, suspended: ["",""])

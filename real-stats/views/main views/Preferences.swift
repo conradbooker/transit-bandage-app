@@ -191,24 +191,30 @@ struct Preferences: View {
                     }
                     .navigationTitle("Settings")
                     .sheet(isPresented: $showAbout) {
-                        VStack {
-                            HStack {
-                                Text("We value privacy. Transit Bandage does not collect user data.")
-                                    .padding()
+                        ZStack {
+                            VStack {
+                                HStack {
+                                    Text("We value privacy. Transit Bandage does not collect user data.")
+                                        .padding()
+                                    Spacer()
+                                }
+                                HStack {
+                                    
+                                    Text(String(format: NSLocalizedString("about-section", comment: "")))
+                                        .padding()
+                                    Spacer()
+                                }
                                 Spacer()
                             }
-                            HStack {
-                                
-                                Text(String(format: NSLocalizedString("about-section", comment: "")))
-                                    .padding()
-                                Spacer()
-                            }
-                            Spacer()
+                            CloseSheet()
                         }
                         .syncLayoutOnDissappear()
                     }
                     .sheet(isPresented: $showFeedback) {
-                        MailView(result: self.$result)
+                        ZStack {
+                            MailView(result: self.$result)
+                            CloseSheet()
+                        }
                     }
                 }
             }

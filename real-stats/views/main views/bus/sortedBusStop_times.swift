@@ -125,7 +125,7 @@ struct sortedBusStop_times: View {
                                 .frame(height: 42)
                             // MARK: - Consolidated
                             if Array(sortedTimes.keys).count == 2 {
-                                LeadingText(text: "Direction 1", padding: 12)
+                                LeadingText(text: "Direction 1", padding: 12, fontType: .body)
                                     .padding(.top, 2)
                                     .padding(.bottom, -2)
                                 ForEach(sortedTimes["direction 1"] ?? [], id: \.self) { entry in
@@ -137,7 +137,7 @@ struct sortedBusStop_times: View {
                                     )
                                     .padding(.horizontal,12)
                                 }
-                                LeadingText(text: "Direction 2", padding: 12)
+                                LeadingText(text: "Direction 2", padding: 12, fontType: .body)
                                     .padding(.top,5)
                                     .padding(.top, 2)
                                     .padding(.bottom, -2)
@@ -183,7 +183,7 @@ struct sortedBusStop_times: View {
                                 Text(busData_dictionary[stop_ids[0]]?.name ?? "")
                                     .font(.title2)
                                 Spacer()
-                                Image(systemName: "chevron.up.circle.fill")
+                                Image(systemName: "chevron.down.circle.fill")
                                     .font(.title3)
                                     .rotationEffect(.degrees(buttonRotation))
                             }

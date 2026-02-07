@@ -10,17 +10,34 @@ import SwiftUI
 struct LeadingText: View {
     var text: String
     var padding: CGFloat
+    var fontType: Font
     var body: some View {
         HStack {
             Text(text)
                 .padding(.leading, padding)
+                .font(fontType)
             Spacer()
         }
     }
 }
 
+//struct LeadingTextBold: View {
+//    var text: String
+//    var padding: CGFloat
+//    var fontType: Font
+//    var body: some View {
+//        HStack {
+//            Text()
+//                .padding(.leading, padding)
+//                
+//            Spacer()
+//        }
+//    }
+//}
+
+
 struct LeadingText_Previews: PreviewProvider {
     static var previews: some View {
-        LeadingText(text: "hello", padding: 12)
+        LeadingText(text: "hello", padding: 12, fontType: .body)
     }
 }

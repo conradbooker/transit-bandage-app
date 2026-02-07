@@ -103,7 +103,7 @@ struct BusStop: Hashable, Codable, Identifiable {
     var name: String
     var short1: String
     var short2: String
-//    var lines: [String]
+    var lines: [String]
     
     var lat: Double
     var lon: Double
@@ -116,7 +116,7 @@ struct BusStop: Hashable, Codable, Identifiable {
 }
 
 struct BusStop_Array: Hashable, Codable, Identifiable {
-    var id: String
+    var id: Int
     var name: String
     var short1: String
     var short2: String

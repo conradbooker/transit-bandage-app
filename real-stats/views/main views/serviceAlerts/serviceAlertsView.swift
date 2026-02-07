@@ -93,14 +93,15 @@ struct serviceAlertsView: View {
 
                                         VStack(alignment: .leading) {
                                             HStack(spacing: 0) {
-                                                Image(line)
+                                                Image(String(alert.split(separator: "*")[1]))
                                                     .resizable()
                                                     .frame(width: 16, height: 16)
                                                     .padding(.leading, 5)
-                                                Text("train to \(stationsDict[alerts.northbound.delays?[alert]?.destination ?? ""]?.short1 ?? "") has been stalled")
+                                                    .padding(.trailing,1)
+                                                Text("to **\(stationsDict[alerts.northbound.delays?[alert]?.destination ?? ""]?.short1 ?? "")** stalled")
                                                     .padding(4)
                                             }
-                                            Text("at \(stationsDict[alerts.northbound.delays?[alert]?.location ?? ""]?.short1 ?? "") for \((alerts.northbound.delays?[alert]?.delayAmmount ?? 0)/60) minutes.")
+                                            Text("at **\(stationsDict[alerts.northbound.delays?[alert]?.location ?? ""]?.short1 ?? "")** for \((alerts.northbound.delays?[alert]?.delayAmmount ?? 0)/60) minutes.")
                                                 .padding(.top,-10)
                                                 .padding(.leading, 5)
                                         }
@@ -267,14 +268,15 @@ struct serviceAlertsView: View {
 
                                         VStack(alignment: .leading) {
                                             HStack(spacing: 0) {
-                                                Image(line)
+                                                Image(String(alert.split(separator: "*")[1]))
                                                     .resizable()
                                                     .frame(width: 16, height: 16)
                                                     .padding(.leading, 5)
-                                                Text("train to \(stationsDict[alerts.southbound.delays?[alert]?.destination ?? ""]?.short1 ?? "") has been stalled")
+                                                    .padding(.trailing,1)
+                                                Text("to **\(stationsDict[alerts.southbound.delays?[alert]?.destination ?? ""]?.short1 ?? "")** stalled")
                                                     .padding(4)
                                             }
-                                            Text("at \(stationsDict[alerts.southbound.delays?[alert]?.location ?? ""]?.short1 ?? "") for \((alerts.southbound.delays?[alert]?.delayAmmount ?? 0)/60) minutes.")
+                                            Text("at **\(stationsDict[alerts.southbound.delays?[alert]?.location ?? ""]?.short1 ?? "")** for \((alerts.southbound.delays?[alert]?.delayAmmount ?? 0)/60) minutes.")
                                                 .padding(.top,-10)
                                                 .padding(.leading, 5)
                                         }

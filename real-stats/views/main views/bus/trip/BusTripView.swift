@@ -150,6 +150,8 @@ struct BusTripView: View {
     var body: some View {
         ZStack {
 // MARK: - START Bottom Section
+            bgColor.first.value
+                .ignoresSafeArea()
             ScrollView {
                 Spacer()
                     .frame(height: 107)
@@ -174,12 +176,12 @@ struct BusTripView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 130, height: 30)
-                                .foregroundColor(Color("cLessDarkGray"))
+                                .foregroundColor(bgColor.third.value)
                                 .shadow(radius: 2)
                             if all {
-                                Text("Fewer stations")
+                                Text("Fewer stops")
                             } else {
-                                Text("More stations")
+                                Text("More stops")
                             }
                         }
                     }
@@ -280,7 +282,7 @@ struct BusTripView: View {
                 VStack {
                     Rectangle()
                         .frame(height: 90)
-                        .foregroundColor(Color("cDarkGray"))
+                        .foregroundColor(bgColor.third.value)
                         .shadow(radius: 2)
                     Spacer()
                 }
@@ -321,7 +323,7 @@ struct BusTripView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .frame(width: 30, height: 30)
-                                    .foregroundColor(Color("cLessDarkGray"))
+                                    .foregroundColor(bgColor.fifth.value)
                                     .shadow(radius: 2)
                                 Image(systemName: "arrow.clockwise")
                             }

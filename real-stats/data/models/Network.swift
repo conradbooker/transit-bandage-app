@@ -25,7 +25,7 @@ enum urls {
 }
 
 
-var base_url: String = urls.local.value
+var base_url: String = urls.production.value
 
 
 let defaultStationTimeData: Data = {
@@ -61,6 +61,23 @@ let defaultTripsData: Data = {
     }
     return data
 }()
+let defaultLineDisruptionSummaryData: Data = {
+    let data: Data
+    let filename = "exampleLineDisruptionSummary.json"
+
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+    else {
+        fatalError("Couldn't find \(filename) in main bundle.")
+    }
+
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+    }
+    return data
+}()
+
 let defaultTripData: Data = {
     let data: Data
     let filename = "stopTime.json"
@@ -295,7 +312,17 @@ class apiCall {
         }
         .resume()
     }
-    
+    func getLineSummary(completion: @escaping ([String: LineDisruptionSummary]) -> ()) {
+        guard let url = URL(string: "\(base_url)service-alerts-summary?APIKey=\(getApiKey())") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            let trips = try? JSONDecoder().decode([String: LineDisruptionSummary].self, from: data ?? defaultLineDisruptionSummaryData)
+            
+            completion(trips ?? exampleLineDisruptionSummary)
+        }
+        .resume()
+    }
+
     func getCurrentVersion(completion: @escaping (Bool) -> ()) {
         guard let bundleId = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String else { return }
         guard let url = URL(string: "https://itunes.apple.com/lookup?bundleId=\(bundleId)&country=br") else { return }
